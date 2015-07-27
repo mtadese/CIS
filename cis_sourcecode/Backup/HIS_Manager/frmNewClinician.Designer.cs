@@ -1,4 +1,4 @@
-﻿namespace CIS.Presentation.UI.WindowsForms
+﻿namespace HIS_Manager
 {
     partial class frmNewClinician
     {

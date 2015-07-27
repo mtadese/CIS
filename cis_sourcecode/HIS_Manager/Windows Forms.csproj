@@ -106,11 +106,11 @@
     <Compile Include="frmClinicsList.Designer.cs">
       <DependentUpon>frmClinicsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNewClinician.cs">
+    <Compile Include="frmNewClinic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNewClinician.Designer.cs">
-      <DependentUpon>frmNewClinician.cs</DependentUpon>
+    <Compile Include="frmNewClinic.Designer.cs">
+      <DependentUpon>frmNewClinic.cs</DependentUpon>
     </Compile>
     <Compile Include="frmViewAppointment.cs">
       <SubType>Form</SubType>
@@ -188,8 +188,8 @@
       <DependentUpon>frmClinicsList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNewClinician.resx">
-      <DependentUpon>frmNewClinician.cs</DependentUpon>
+    <EmbeddedResource Include="frmNewClinic.resx">
+      <DependentUpon>frmNewClinic.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewAppointment.resx">

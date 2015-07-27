@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35338A
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presenter", "Presenter\Presenter.csproj", "{3E9ED676-3E4C-4C29-BC08-D7D856D08CEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{073A82C3-16B6-40F0-93DF-9227094B57DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{073A82C3-16B6-40F0-93DF-9227094B57DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{073A82C3-16B6-40F0-93DF-9227094B57DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E9ED676-3E4C-4C29-BC08-D7D856D08CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E9ED676-3E4C-4C29-BC08-D7D856D08CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E9ED676-3E4C-4C29-BC08-D7D856D08CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E9ED676-3E4C-4C29-BC08-D7D856D08CEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,5 +46,6 @@ Global
 		{073A82C3-16B6-40F0-93DF-9227094B57DD} = {3D08D5E6-864C-40C6-A7EE-6FCB80809BD4}
 		{3D08D5E6-864C-40C6-A7EE-6FCB80809BD4} = {F9A6DD05-7561-4C3E-935E-3EEBE707CFD5}
 		{D037772D-A87F-4D63-8155-7793B73C37A3} = {F9A6DD05-7561-4C3E-935E-3EEBE707CFD5}
+		{3E9ED676-3E4C-4C29-BC08-D7D856D08CEA} = {D037772D-A87F-4D63-8155-7793B73C37A3}
 	EndGlobalSection
 EndGlobal

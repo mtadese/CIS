@@ -35,22 +35,22 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             txtDateReg.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
             //conditions for populating mandatory fields before savin into database
-            if (txtCNum.Text == "") { MessageBox.Show("Mandatory Field is empty:Clinician Number"); }
+            if (txtClinicNumber.Text == "") { MessageBox.Show("Mandatory Field is empty:Clinician Number"); }
 
-            else if (txtLname.Text == "") { MessageBox.Show("Mandatory Field is empty:Lastname"); }
+            else if (txtLastName.Text == "") { MessageBox.Show("Mandatory Field is empty:Lastname"); }
             else
             {
                 //inserting data from the textbox controls into the MySql database
                 cmd = con.CreateCommand();
                 cmd.CommandText = "INSERT INTO Clinicians(clnc_id, title, lastname, firstname, specialty, department, address, phone, email, date_created)VALUES(@clinicID, @title, @lastname, @firstname, @specialty, @department, @address, @phone, @email, @dateCreated)";
-                cmd.Parameters.AddWithValue("@clinicID", txtCNum.Text);
-                cmd.Parameters.AddWithValue("@title", cmbtitle.Text);
-                cmd.Parameters.AddWithValue("@lastname", txtLname.Text);
-                cmd.Parameters.AddWithValue("@firstname", txtFname.Text);
+                cmd.Parameters.AddWithValue("@clinicID", txtClinicNumber.Text);
+                cmd.Parameters.AddWithValue("@title", cboTitle.Text);
+                cmd.Parameters.AddWithValue("@lastname", txtLastName.Text);
+                cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text);
                 cmd.Parameters.AddWithValue("@specialty", txtSpecialty.Text);
-                cmd.Parameters.AddWithValue("@department", txtDept.Text);
+                cmd.Parameters.AddWithValue("@department", txtDepartment.Text);
                 cmd.Parameters.AddWithValue("@address", txtAddress.Text);
-                cmd.Parameters.AddWithValue("@phone", txtPhone.Text);
+                cmd.Parameters.AddWithValue("@phone", txtTelephone.Text);
                 cmd.Parameters.AddWithValue("@email", txtEmail.Text);
                 cmd.Parameters.AddWithValue("@dateCreated", txtDateReg.Text);
 
