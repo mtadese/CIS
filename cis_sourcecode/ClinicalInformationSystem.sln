@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows Forms", "HIS_Manager\Windows Forms.csproj", "{073A82C3-16B6-40F0-93DF-9227094B57DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{F9A6DD05-7561-4C3E-935E-3EEBE707CFD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{C8114C33-403A-4323-877B-344EBB410E4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F95EE0B4-30F2-425F-BF82-F9A4E6D966CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{3D08D5E6-864C-40C6-A7EE-6FCB80809BD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{D037772D-A87F-4D63-8155-7793B73C37A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35338A1A-A846-406B-AABC-AC64290DB866}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{073A82C3-16B6-40F0-93DF-9227094B57DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{073A82C3-16B6-40F0-93DF-9227094B57DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{073A82C3-16B6-40F0-93DF-9227094B57DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{073A82C3-16B6-40F0-93DF-9227094B57DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{073A82C3-16B6-40F0-93DF-9227094B57DD} = {3D08D5E6-864C-40C6-A7EE-6FCB80809BD4}
+		{3D08D5E6-864C-40C6-A7EE-6FCB80809BD4} = {F9A6DD05-7561-4C3E-935E-3EEBE707CFD5}
+		{D037772D-A87F-4D63-8155-7793B73C37A3} = {F9A6DD05-7561-4C3E-935E-3EEBE707CFD5}
+	EndGlobalSection
+EndGlobal

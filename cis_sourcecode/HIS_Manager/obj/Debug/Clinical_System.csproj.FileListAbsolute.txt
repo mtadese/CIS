@@ -41,3 +41,5 @@ C:\Users\Home\Documents\Visual Studio 2008\Projects\HIS_Manager1\HIS_Manager\obj
 C:\Users\Home\Documents\Visual Studio 2008\Projects\HIS_Manager1\HIS_Manager\obj\Debug\HIS_Manager.Properties.Resources.resources
 C:\Users\Home\Documents\Visual Studio 2008\Projects\HIS_Manager1\HIS_Manager\bin\Debug\HIS_Manager.exe
 C:\Users\Home\Documents\Visual Studio 2008\Projects\HIS_Manager1\HIS_Manager\bin\Debug\HIS_Manager.pdb
+C:\Users\admin\Source\Repos\CIS\cis_sourcecode\HIS_Manager\obj\Debug\HIS_Manager.exe
+C:\Users\admin\Source\Repos\CIS\cis_sourcecode\HIS_Manager\obj\Debug\HIS_Manager.pdb

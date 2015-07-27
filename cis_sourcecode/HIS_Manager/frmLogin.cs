@@ -8,9 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 //references for connecting to MySql database
 using MySql.Data.MySqlClient;
-using MySql.Web;
 
-namespace HIS_Manager
+namespace CIS.Presentation.UI.WindowsForms
 {
     public partial class frmLogin : Form
     {

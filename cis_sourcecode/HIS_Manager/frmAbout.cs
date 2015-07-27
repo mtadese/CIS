@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HIS_Manager
+namespace CIS.Presentation.UI.WindowsForms
 {
     public partial class frmAbout : Form
     {

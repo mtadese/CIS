@@ -13,7 +13,7 @@ using System.Drawing.Imaging;
 
 
 
-namespace HIS_Manager
+namespace CIS.Presentation.UI.WindowsForms
 {
     public partial class frmPatientRecord : Form
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace HIS_Manager
+namespace CIS.Presentation.UI.WindowsForms
 {
     public partial class frmViewAppointment : Form
     {

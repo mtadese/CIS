@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-//references for connecting to MySql database
-using MySql.Data.MySqlClient;
 
-namespace HIS_Manager
+namespace CIS.Presentation.UI.WindowsForms
 {
     public partial class frmBookAppointment : Form
     {
@@ -31,7 +25,7 @@ namespace HIS_Manager
             connectionString = "Server=127.0.0.1;Database=his_record;Uid=root;Pwd=password;";
             con = new MySqlConnection(connectionString);
             con.Open();
-                        
+
             Load_ClinicsRecord();
         }
 
@@ -49,7 +43,7 @@ namespace HIS_Manager
 
                 else
                     //inserting data from the textbox controls into the MySql database
-                cmd = con.CreateCommand();
+                    cmd = con.CreateCommand();
                 cmd.CommandText = "INSERT INTO appointments(clinician_id, clinician_name, patient_id, hospital_number, patient_name, date_of_appointment, time_of_appointment, purpose_of_appointment, date_created)VALUES(@clinicID, @clinicianName, @patientID, @hospitalNumber, @patientName, @apptDate, @apptTime, @apptPurpose, @dateCreated)";
                 cmd.Parameters.AddWithValue("@clinicID", txtCNum.Text);
                 cmd.Parameters.AddWithValue("@clinicianName", txtPatConsultant.Text);
@@ -63,13 +57,13 @@ namespace HIS_Manager
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Clinic Saved");
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Book Appointment");
             }
-               
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -121,7 +115,7 @@ namespace HIS_Manager
         {
             grpClinics.Visible = false;
         }
-                
+
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             //display calendar control
@@ -144,13 +138,13 @@ namespace HIS_Manager
                     MessageBox.Show(ex.Message, "Search Clinics");
                 }
             }
-        }                
-        
+        }
+
         private void txtPid_Leave(object sender, EventArgs e)
         {
             //display patient full name from inputed patient ID
             try
-            {                
+            {
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = "Select hospitalNumber, lName, fName from Patients where Patient_ID = '" + txtPid.Text + "' ";
                 dr = cmd.ExecuteReader();
@@ -165,11 +159,11 @@ namespace HIS_Manager
                 }
             }
             catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Book Appointment");
-                }
-        }        
-        
+            {
+                MessageBox.Show(ex.Message, "Book Appointment");
+            }
+        }
+
 
     }
 }

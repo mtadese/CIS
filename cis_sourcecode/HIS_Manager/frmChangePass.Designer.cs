@@ -1,4 +1,4 @@
-﻿namespace HIS_Manager
+﻿namespace CIS.Presentation.UI.WindowsForms
 {
     partial class frmChangePass
     {

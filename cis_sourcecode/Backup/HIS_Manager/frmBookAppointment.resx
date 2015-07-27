@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -112,9 +112,34 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAP8zAAD/MwAd/zMAOf8zAAn+NwUA/wAAAdinmyzao5Ut/wkAAv05BwD/MwAG/zMANv8z
+        ACP/MwAAAAAAAAAAAAD/MwAA/zMAcv8zAOD/MwAl+UQXAO9jQRPSurTI1LWtz/JZMhj5RhoA/zMAGP8z
+        ANX/MwCJ/zMAAAAAAAAAAAAA/zMAAP8zAHb/MwDp/zMAJ/tAEgD4RxpG1q6j9desofn5RBdQ+kIUAP8z
+        ABn/MwDc/zMAjf8zAAAAAAAAAAAAAP8zAAD/MwB2/zMA6f8zACb3TCEA/D0NjNinm//Yp5r//DwMm/8A
+        AAD/MwAZ/zMA3P8zAI3/MwAAAAAAAAAAAAD/MwAA/zMAdv8zAOn/MwAl/y8AFP06Cc/Yp5v/16yi9v05
+        CdP/MAAe/zMAF/8zANz/MwCN/zMAAAAAAAAAAAAA/zMAAP8zAHb/MwDp/zMAI/8yAEj9OQjp1q+m8c/D
+        v9H9OgnI/zIAXP8zABX/MwDc/zMAjf8zAAAAAAAAAAAAAP8zAAD/MwB2/zMA6P8zACf/MgCT/ToJxc7F
+        ws7Lzs/B/D0Nif8zAKX/MwAd/zMA3P8zAI3/MwAAAAAAAAAAAAD/MwAA/zMAdv8zAOf/MwA//zMA0Ps+
+        Dn7Lzs/By87PwfhIG0H/MwDO/zMAQf8zANr/MwCN/zMAAAAAAAAAAAAA/zMAAP8zAHb/MwDl/zMAd/8z
+        AN73SyA5y87PwczNzcPpdlkU/zMAuP8zAIP/MwDZ/zMAjf8zAAAAAAAAAAAAAP8xAAD/MgB2/zEA6f8w
+        AMH/MAC05X5pEczMzcPMzMzEsP//Bv8vAHL/MADK/zAA5P8yAI3/LwAAAAAAAAAAAAD1USgA+UQXdfNX
+        MPzyWjT36nFSnMrS1EPMzMzSzMzM0srS1EPgj3pp8Vw27fJZMv73TCGM625OAAAAAAAAAAAAytLUANqj
+        lXLPw8D/zsfF/83KyvrMzMz4zMzM/czMzP3MzMz4zMzM+M7Hxv7OxsP/07ixkL/z/wAAAAAAAAAAAMvQ
+        0QDboJElzcnIZszNzWnMzMxpzMzMaczMzGnMzMxpzMzMaczMzGnMzc1pzMzMadO4sTG9+f8AAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAA//8AAMQjAADEIwAAxCMAAMQDAADAAwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMAD
+        AAD//wAA//8AAA==
+</value>
+  </data>
 </root>

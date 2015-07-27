@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-//references for connecting to MySql database
-using MySql.Data.MySqlClient;
 
-namespace HIS_Manager
+namespace CIS.Presentation.UI.WindowsForms
 {
     public partial class frmClinicsList : Form
     {
@@ -18,13 +12,13 @@ namespace HIS_Manager
             InitializeComponent();
         }
         //declaration of variables to be used within the program
-        string connectionString;   
-        MySqlConnection con;        
+        string connectionString;
+        MySqlConnection con;
         MySqlDataAdapter adap;
         DataSet ds1, ds;
 
         public static TextBox clID;
-        
+
         private void frmClinicsList_Load(object sender, EventArgs e)
         {
             //connecting string for the C# application to MySql database
@@ -83,6 +77,6 @@ namespace HIS_Manager
             book.ShowDialog();
         }
 
-        
+
     }
 }

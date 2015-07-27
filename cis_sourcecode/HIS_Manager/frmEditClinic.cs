@@ -10,7 +10,7 @@ using System.Drawing.Imaging;
 //references for connecting to MySql database
 using MySql.Data.MySqlClient;
 
-namespace HIS_Manager
+namespace CIS.Presentation.UI.WindowsForms
 {
     public partial class frmEditClinic : Form
     {
