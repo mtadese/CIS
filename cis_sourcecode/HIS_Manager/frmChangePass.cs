@@ -1,6 +1,6 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace CIS.Presentation.UI.WindowsForms
@@ -12,23 +12,16 @@ namespace CIS.Presentation.UI.WindowsForms
             InitializeComponent();
         }
 
-        string connectionString;
-        MySqlConnection con;
-        MySqlCommand cmd;
-        MySqlDataAdapter adap;
+        SqlConnection con;
+        SqlCommand cmd;
+        SqlDataAdapter adap;
         DataSet ds;
-        MySqlDataReader dr;
+        SqlDataReader dr;
 
         private void frmChangePass_Load(object sender, EventArgs e)
         {
-
-            connectionString = "Server=127.0.0.1;Database=his_record;Uid=micheal;Pwd=password;";
-            con = new MySqlConnection(connectionString);
+            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
-
-
-
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)

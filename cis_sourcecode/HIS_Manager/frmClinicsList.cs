@@ -1,6 +1,6 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace CIS.Presentation.UI.WindowsForms
@@ -11,24 +11,21 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             InitializeComponent();
         }
-        //declaration of variables to be used within the program
-        string connectionString;
-        MySqlConnection con;
-        MySqlDataAdapter adap;
+
+        SqlConnection con;
+        SqlDataAdapter adap;
         DataSet ds1, ds;
 
         public static TextBox clID;
 
         private void frmClinicsList_Load(object sender, EventArgs e)
         {
-            //connecting string for the C# application to MySql database
-            connectionString = "Server=127.0.0.1;Database=his_record;Uid=root;Pwd=password;";
-            con = new MySqlConnection(connectionString);
+            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
             //display list of clinicians in the system
-            MySqlCommand cmd = con.CreateCommand();
+            SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "Select clnc_sys_id, clnc_id, title, lastname, specialty from Clinicians";
-            adap = new MySqlDataAdapter(cmd);
+            adap = new SqlDataAdapter(cmd);
             ds1 = new DataSet();
             adap.Fill(ds1, "clinicians");
             dataGridView1.DataSource = ds1.Tables[0];

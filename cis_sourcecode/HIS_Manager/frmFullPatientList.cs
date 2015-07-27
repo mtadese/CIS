@@ -6,8 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-//references for connecting to MySql database
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace CIS.Presentation.UI.WindowsForms
 {
@@ -20,16 +19,14 @@ namespace CIS.Presentation.UI.WindowsForms
 
         //declaration of variables to be used within the program
         string connectionString;
-        MySqlConnection con;
-        MySqlDataAdapter adap;
+        SqlConnection con;
+        SqlDataAdapter adap;
         DataSet ds1;
 
         
         private void frmFullPatientList_Load(object sender, EventArgs e)
         {
-            //connecting string for the C# application to MySql database
-            connectionString = "Server=127.0.0.1;Database=his_record;Uid=root;Pwd=password;";
-            con = new MySqlConnection(connectionString);
+            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
 
             Load_Users();
@@ -40,9 +37,9 @@ namespace CIS.Presentation.UI.WindowsForms
             //display all patients' demographics on a gridview control
             try
             {
-                MySqlCommand cmd = con.CreateCommand();
+                SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = "Select * from Patients";
-                adap = new MySqlDataAdapter(cmd);
+                adap = new SqlDataAdapter(cmd);
                 ds1 = new DataSet();
                 adap.Fill(ds1, "patients");
                 dataGridView1.DataSource = ds1.Tables[0];

@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
-//references for connecting to MySql database
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace CIS.Presentation.UI.WindowsForms
 {
@@ -20,17 +19,15 @@ namespace CIS.Presentation.UI.WindowsForms
         }
         //declaration of variables to be used within the program
         string connectionString;
-        MySqlConnection con;
-        MySqlCommand cmd;
-        MySqlDataAdapter adap;
+        SqlConnection con;
+        SqlCommand cmd;
+        SqlDataAdapter adap;
         DataSet ds;
-        MySqlDataReader dr;
+        SqlDataReader dr;
 
         private void frmClinicianRecord_Load(object sender, EventArgs e)
         {
-            //connecting string for the C# application to MySql database
-            connectionString = "Server=127.0.0.1;Database=his_record;Uid=root;Pwd=password;";
-            con = new MySqlConnection(connectionString);
+            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
 
             Load_ClinicRecord();            
@@ -41,7 +38,7 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             string a = frmClinicsList.clID.Text;
             //importing data from the MySql database into the clinician record form
-            MySqlCommand cmd = con.CreateCommand();
+            SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "Select * from Clinicians where clnc_sys_id = '" + a + "' ";
             dr = cmd.ExecuteReader();
 

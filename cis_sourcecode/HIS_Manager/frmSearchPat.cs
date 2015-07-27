@@ -6,8 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-//references for connecting to MySql database
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace CIS.Presentation.UI.WindowsForms
 {
@@ -17,26 +16,21 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             InitializeComponent();
         }
-        //declaration of variables to be used within the program
-            string connectionString;
-            MySqlDataReader dr;
 
-            MySqlConnection con;
-            MySqlCommand cmd;
-            MySqlDataAdapter adap;
-            DataSet ds1, ds;
+        SqlConnection con;
+        SqlDataAdapter adap;
+        DataSet ds1, ds;
 
-            public static TextBox pid;
-        
+        public static TextBox pid;
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //connecting string for the C# application to MySql database
             this.Height = 155;
-            connectionString = "Server=127.0.0.1;Database=his_record;Uid=root;Pwd=password;";
-            con = new MySqlConnection(connectionString);
+            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
 
-           pid = txtpid2;
+            pid = txtpid2;
 
         }
 
@@ -48,11 +42,11 @@ namespace CIS.Presentation.UI.WindowsForms
                 MessageBox.Show("No Patient Found");
             }
 
-            else if (txtLname.Text == "" )
+            else if (txtLname.Text == "")
             {
-                MySqlCommand cmd = con.CreateCommand();
+                SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = "Select * from Patients where fName= '" + txtFname.Text + "' or Patient_ID = '" + txtPid.Text + "' or HospitalNumber = '" + txtHospNum.Text + "'  ";
-                adap = new MySqlDataAdapter(cmd);
+                adap = new SqlDataAdapter(cmd);
                 ds1 = new DataSet();
                 adap.Fill(ds1, "patients");
                 dataGridView1.DataSource = ds1.Tables[0];
@@ -64,9 +58,9 @@ namespace CIS.Presentation.UI.WindowsForms
 
             else
             {
-                MySqlCommand cmd = con.CreateCommand();
+                SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = "Select * from Patients where lName like '" + txtLname.Text + "%" + "' or fName= '" + txtFname.Text + "' or Patient_ID = '" + txtPid.Text + "' or HospitalNumber = '" + txtHospNum.Text + "' ";
-                adap = new MySqlDataAdapter(cmd);
+                adap = new SqlDataAdapter(cmd);
                 ds1 = new DataSet();
                 adap.Fill(ds1, "patients");
                 dataGridView1.DataSource = ds1.Tables[0];
@@ -79,7 +73,7 @@ namespace CIS.Presentation.UI.WindowsForms
             }
 
 
-            
+
 
         }
 
@@ -115,11 +109,5 @@ namespace CIS.Presentation.UI.WindowsForms
             patrecord.Show();
 
         }
-
-           
-        
-
-
-
     }
 }

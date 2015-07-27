@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-//references for connecting to MySql database
-using MySql.Data.MySqlClient;
 
 namespace CIS.Presentation.UI.WindowsForms
 {
@@ -19,17 +18,15 @@ namespace CIS.Presentation.UI.WindowsForms
         }
         //declaration of variables to be used within the program
         string connectionString;
-        MySqlConnection con;
-        MySqlCommand cmd;
-        MySqlDataReader dr;
+        SqlConnection con;
+        SqlCommand cmd;
+        SqlDataReader dr;
 
         frmHome homepage;
         
         private void Form1_Load(object sender, EventArgs e)
         {
-            //connecting string for the C# application to MySql database
-            connectionString = "Server=localhost;Database=his_record;Uid=root;Pwd=password;";
-            con = new MySqlConnection(connectionString);
+            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
 
             homepage = new frmHome();

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 
 namespace CIS.Presentation.UI.WindowsForms
@@ -19,14 +19,12 @@ namespace CIS.Presentation.UI.WindowsForms
         }
         //declaration of variables to be used within the program
         string connectionString;
-        MySqlConnection con;
-        MySqlCommand cmd;
+        SqlConnection con;
+        SqlCommand cmd;
 
         private void New_User_Load(object sender, EventArgs e)
         {
-            //connecting string for the C# application to MySql database
-            connectionString = "Server=127.0.0.1;Database=his_record;Uid=root;Pwd=password;";
-            con = new MySqlConnection(connectionString);
+            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
 
         }
@@ -41,22 +39,22 @@ namespace CIS.Presentation.UI.WindowsForms
             cmd.Parameters.AddWithValue("@username", txtUsername.Text);
             cmd.Parameters.AddWithValue("@password", txtPassword.Text);
             cmd.Parameters.AddWithValue("@module_access", txtProfile.Text);
-            
+
 
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("New User Created");           
+            MessageBox.Show("New User Created");
             this.Close();
 
-                        
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             //close this module
             this.Close();
-            
+
         }
-       
+
     }
 }

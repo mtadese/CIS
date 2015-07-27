@@ -1,6 +1,6 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace CIS.Presentation.UI.WindowsForms
@@ -13,17 +13,15 @@ namespace CIS.Presentation.UI.WindowsForms
         }
         //declaration of variables to be used within the program
         string connectionString;
-        MySqlConnection con;
-        MySqlCommand cmd;
-        MySqlDataAdapter adap;
+        SqlConnection con;
+        SqlCommand cmd;
+        SqlDataAdapter adap;
         DataSet ds;
-        MySqlDataReader dr;
+        SqlDataReader dr;
 
         private void frmBookAppointment_Load(object sender, EventArgs e)
         {
-            //connecting string for the C# application to MySql database
-            connectionString = "Server=127.0.0.1;Database=his_record;Uid=root;Pwd=password;";
-            con = new MySqlConnection(connectionString);
+            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
 
             Load_ClinicsRecord();
@@ -77,7 +75,7 @@ namespace CIS.Presentation.UI.WindowsForms
             //function to import clinicians record to select for booking appointment
             cmd = con.CreateCommand();
             cmd.CommandText = "Select title, lastname, clnc_id  from Clinicians";
-            adap = new MySqlDataAdapter(cmd);
+            adap = new SqlDataAdapter(cmd);
             ds = new DataSet();
             adap.Fill(ds, "clinicians");
             dgridClinics.DataSource = ds.Tables[0];
@@ -145,7 +143,7 @@ namespace CIS.Presentation.UI.WindowsForms
             //display patient full name from inputed patient ID
             try
             {
-                MySqlCommand cmd = con.CreateCommand();
+                SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = "Select hospitalNumber, lName, fName from Patients where Patient_ID = '" + txtPid.Text + "' ";
                 dr = cmd.ExecuteReader();
 

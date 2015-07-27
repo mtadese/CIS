@@ -6,10 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-//references for connecting to MySql database
-using MySql.Data.MySqlClient;
 using System.IO;
 using System.Drawing.Imaging;
+using System.Data.SqlClient;
 
 
 
@@ -23,36 +22,34 @@ namespace CIS.Presentation.UI.WindowsForms
         }
         //declaration of variables to be used within the program
         string connectionString;
-        MySqlConnection con;
-        MySqlCommand cmd;
-        MySqlDataAdapter adap;
+        SqlConnection con;
+        SqlCommand cmd;
+        SqlDataAdapter adap;
         DataSet ds;
-        MySqlDataReader dr;
+        SqlDataReader dr;
 
 
         private void frmPatientRecord_Load(object sender, EventArgs e)
         {
             txtPatImage.Visible = false;
 
-            //connecting string for the C# application to MySql database
-            connectionString = "Server=127.0.0.1;Database=his_record;Uid=root;Pwd=password;";
-            con = new MySqlConnection(connectionString);
+            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
 
-            Load_PatientRecord();                      
+            Load_PatientRecord();
             Load_ClinicsRecord();
         }
 
-        
+
         private void Load_PatientRecord()
         {
             string a = frmSearchPat.pid.Text;
 
             //importing data from the MySql database into the patient record form
-            MySqlCommand cmd = con.CreateCommand();
+            SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "Select * from Patients where Patient_ID = '" + a + "' ";
             dr = cmd.ExecuteReader();
-            
+
             if (dr.Read())
             {
                 txtPid.Text = Convert.ToString(dr[0]);
@@ -100,10 +97,10 @@ namespace CIS.Presentation.UI.WindowsForms
 
 
         }
-                      
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            txtDateAmend.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"); 
+            txtDateAmend.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
 
             //updating database records with new updates made on form
             try
@@ -123,54 +120,54 @@ namespace CIS.Presentation.UI.WindowsForms
 
                 cmd = con.CreateCommand();
                 cmd.CommandText = "UPDATE Patients SET hospitalnumber=@hospitalnumber, title=@title, lname=@lname, fname=@fname, mname=@mname, gender=@gender, DateofBirth=@DateofBirth, Phone=@Phone, Mobile_Phone=@Mobile_Phone, Email=@Email, HomeAddress=@HomeAddress, City=@City, State=@State, MaritalStatus=@MaritalStatus, Patient_Consultant=@PatConsultant, Nationality=@Nationality, State_of_Origin=@State_of_Origin, Hometown=@Hometown, Place_of_Birth=@Place_of_Birth, Religion=@Religion, Occupation=@Occupation, OfficeAddress=@OfficeAddress, National_ID_Type=@National_ID_Type, National_ID_Number=@National_ID_Number, Next_of_Kin=@Next_of_Kin, Address_NOK=@Address_NOK, Phone_NOK=@Phone_NOK, Email_NOK=@Email_NOK, NOK_Relationship=@NOK_Relationship, Name_of_Father=@Name_of_Father, Name_of_Mother=@Name_of_Mother, Health_Insurance_Prov=@Health_Insurance_Prov, Address_HIP=@Address_HIP, Phone_HIP=@Phone_HIP, Email_HIP=@Email_HIP, Date_Amended=@Date_Amended WHERE Patient_ID= '" + txtPid.Text + "' ;";
-                              
-                    cmd.Parameters.AddWithValue("@hospitalnumber", txtHospNum.Text);
-                    cmd.Parameters.AddWithValue("@title", cmbtitle.Text);
-                    cmd.Parameters.AddWithValue("@lname", txtLname.Text);
-                    cmd.Parameters.AddWithValue("@fname", txtFname.Text);
-                    cmd.Parameters.AddWithValue("@mname", txtMname.Text);
-                    cmd.Parameters.AddWithValue("@gender", cmbGender.Text);                    
-                    cmd.Parameters.AddWithValue("@DateofBirth", DateTime.Parse(txtDob.Text));
-                    cmd.Parameters.AddWithValue("@Phone", int.Parse(txtPhone.Text));
-                    cmd.Parameters.AddWithValue("@Mobile_Phone", int.Parse(txtMPhone.Text));
-                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@HomeAddress", txtHAddress.Text);
-                    cmd.Parameters.AddWithValue("@city", txtCity.Text);
-                    cmd.Parameters.AddWithValue("@State", txtState.Text);
-                    cmd.Parameters.AddWithValue("@MaritalStatus", cmbMStatus.Text);
-                    cmd.Parameters.AddWithValue("@PatConsultant", txtPatConsultant.Text);
-                    cmd.Parameters.AddWithValue("@Nationality", txtNat.Text);
-                    cmd.Parameters.AddWithValue("@State_of_origin", txtSOrigin.Text);
-                    cmd.Parameters.AddWithValue("@Hometown", txtTOrigin.Text);
-                    cmd.Parameters.AddWithValue("@Place_of_Birth", txtPoB.Text);
-                    cmd.Parameters.AddWithValue("@Religion", txtReligion.Text);
-                    cmd.Parameters.AddWithValue("@Occupation", txtOccupation.Text);
-                    cmd.Parameters.AddWithValue("@OfficeAddress", txtOAddress.Text);
-                    cmd.Parameters.AddWithValue("@National_ID_Type", cmbNIDType.Text);
-                    cmd.Parameters.AddWithValue("@National_ID_Number", txtNidNumber.Text);
-                    cmd.Parameters.AddWithValue("@Next_of_Kin", txtNok.Text);
-                    cmd.Parameters.AddWithValue("@Address_NOK", txtNoKAddress.Text);
-                    cmd.Parameters.AddWithValue("@Phone_NOK", int.Parse(txtNoKPhone.Text));
-                    cmd.Parameters.AddWithValue("@Email_NOK", txtNoKEmail.Text);
-                    cmd.Parameters.AddWithValue("@NOK_Relationship", cmbNokRelationship.Text);
-                    cmd.Parameters.AddWithValue("@Name_of_Father", txtFather.Text);
-                    cmd.Parameters.AddWithValue("@Name_of_Mother", txtMother.Text);
-                    cmd.Parameters.AddWithValue("@Health_Insurance_Prov", txtHealthIns.Text);
-                    cmd.Parameters.AddWithValue("@Address_HIP", txtHealthAddr.Text);
-                    cmd.Parameters.AddWithValue("@Phone_HIP", int.Parse(txtHealthPhone.Text));
-                    cmd.Parameters.AddWithValue("@Email_HIP", txtHealthEmail.Text);
-                    cmd.Parameters.AddWithValue("@Date_Amended", txtDateAmend.Text);
-                
-                    cmd.ExecuteNonQuery();
 
-                    saveImage();
-                
-                        MessageBox.Show("Patient Record Updated");                   
-                }
-                        
-            catch(Exception ex)
+                cmd.Parameters.AddWithValue("@hospitalnumber", txtHospNum.Text);
+                cmd.Parameters.AddWithValue("@title", cmbtitle.Text);
+                cmd.Parameters.AddWithValue("@lname", txtLname.Text);
+                cmd.Parameters.AddWithValue("@fname", txtFname.Text);
+                cmd.Parameters.AddWithValue("@mname", txtMname.Text);
+                cmd.Parameters.AddWithValue("@gender", cmbGender.Text);
+                cmd.Parameters.AddWithValue("@DateofBirth", DateTime.Parse(txtDob.Text));
+                cmd.Parameters.AddWithValue("@Phone", int.Parse(txtPhone.Text));
+                cmd.Parameters.AddWithValue("@Mobile_Phone", int.Parse(txtMPhone.Text));
+                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@HomeAddress", txtHAddress.Text);
+                cmd.Parameters.AddWithValue("@city", txtCity.Text);
+                cmd.Parameters.AddWithValue("@State", txtState.Text);
+                cmd.Parameters.AddWithValue("@MaritalStatus", cmbMStatus.Text);
+                cmd.Parameters.AddWithValue("@PatConsultant", txtPatConsultant.Text);
+                cmd.Parameters.AddWithValue("@Nationality", txtNat.Text);
+                cmd.Parameters.AddWithValue("@State_of_origin", txtSOrigin.Text);
+                cmd.Parameters.AddWithValue("@Hometown", txtTOrigin.Text);
+                cmd.Parameters.AddWithValue("@Place_of_Birth", txtPoB.Text);
+                cmd.Parameters.AddWithValue("@Religion", txtReligion.Text);
+                cmd.Parameters.AddWithValue("@Occupation", txtOccupation.Text);
+                cmd.Parameters.AddWithValue("@OfficeAddress", txtOAddress.Text);
+                cmd.Parameters.AddWithValue("@National_ID_Type", cmbNIDType.Text);
+                cmd.Parameters.AddWithValue("@National_ID_Number", txtNidNumber.Text);
+                cmd.Parameters.AddWithValue("@Next_of_Kin", txtNok.Text);
+                cmd.Parameters.AddWithValue("@Address_NOK", txtNoKAddress.Text);
+                cmd.Parameters.AddWithValue("@Phone_NOK", int.Parse(txtNoKPhone.Text));
+                cmd.Parameters.AddWithValue("@Email_NOK", txtNoKEmail.Text);
+                cmd.Parameters.AddWithValue("@NOK_Relationship", cmbNokRelationship.Text);
+                cmd.Parameters.AddWithValue("@Name_of_Father", txtFather.Text);
+                cmd.Parameters.AddWithValue("@Name_of_Mother", txtMother.Text);
+                cmd.Parameters.AddWithValue("@Health_Insurance_Prov", txtHealthIns.Text);
+                cmd.Parameters.AddWithValue("@Address_HIP", txtHealthAddr.Text);
+                cmd.Parameters.AddWithValue("@Phone_HIP", int.Parse(txtHealthPhone.Text));
+                cmd.Parameters.AddWithValue("@Email_HIP", txtHealthEmail.Text);
+                cmd.Parameters.AddWithValue("@Date_Amended", txtDateAmend.Text);
+
+                cmd.ExecuteNonQuery();
+
+                saveImage();
+
+                MessageBox.Show("Patient Record Updated");
+            }
+
+            catch (Exception ex)
             {
-               MessageBox.Show(ex.Message, "Update Patient Record"); 
+                MessageBox.Show(ex.Message, "Update Patient Record");
             }
 
         }
@@ -254,8 +251,8 @@ namespace CIS.Presentation.UI.WindowsForms
             try
             {
                 //import patient's picture from database to form's picture control
-                cmd = new MySqlCommand("Select patientImage from Patients where Patient_ID ='" + txtPid.Text + "' ;", con);
-                adap = new MySqlDataAdapter(cmd);
+                cmd = new SqlCommand("Select patientImage from Patients where Patient_ID ='" + txtPid.Text + "' ;", con);
+                adap = new SqlDataAdapter(cmd);
                 ds = new DataSet();
                 adap.Fill(ds, "Patients");
                 int c = ds.Tables["Patients"].Rows.Count;
@@ -294,7 +291,7 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             // calling the lodReport code block before printing on hardcopy
             LoadReport();
-            
+
             // print patient's demographic on hardcopy 
             PrintDialog print = new PrintDialog();
 
@@ -311,13 +308,13 @@ namespace CIS.Presentation.UI.WindowsForms
             if (print.ShowDialog(this) == DialogResult.OK)
             {
                 printDoc.Print();
-            } 
+            }
         }
 
         private void printDoc_PrintPage(Object Sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {            
+        {
             //set printing section properties
-            string strPrint = richTextBox1.Text ;
+            string strPrint = richTextBox1.Text;
             int charCount = 0;
             int lineCount = 0;
 
@@ -328,7 +325,7 @@ namespace CIS.Presentation.UI.WindowsForms
             {
                 //e.HasMorePages = true;
                 e.Graphics.DrawString(strPrint, this.Font, Brushes.Black, e.MarginBounds, StringFormat.GenericTypographic);
-                
+
             }
             else
             {
@@ -348,7 +345,7 @@ namespace CIS.Presentation.UI.WindowsForms
             //sarch patient's preferred clinician to load into patient's demographics
             cmd = con.CreateCommand();
             cmd.CommandText = "Select lastname, title from Clinicians";
-            adap = new MySqlDataAdapter(cmd);
+            adap = new SqlDataAdapter(cmd);
             ds = new DataSet();
             adap.Fill(ds, "clinicians");
             dgridClinics.DataSource = ds.Tables[0];
@@ -376,8 +373,8 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             // display list of clinicians to select from
             grpClinics.Visible = true;
-            grpClinics.Left = 420;;
-            grpClinics.Top = 0;            
+            grpClinics.Left = 420; ;
+            grpClinics.Top = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 //references for connecting to MySql database
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 
 namespace CIS.Presentation.UI.WindowsForms
@@ -18,21 +18,18 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             InitializeComponent();
         }
-        //declaration of variables to be used within the program
-        string connectionString;
-        MySqlConnection con;
-        MySqlCommand cmd;
-        MySqlDataAdapter da;
+
+        SqlConnection con;
+        SqlCommand cmd;
+        SqlDataAdapter da;
         DataSet ds;
 
 
         private void frmNewPatient_Load(object sender, EventArgs e)
         {
-            //connecting string for the C# application to MySql database
-            connectionString = "Server=127.0.0.1;Database=his_record;Uid=root;Pwd=password;";
-            con = new MySqlConnection(connectionString);
+            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
-            
+
             //gerenarate and display present date and time in a textbox control
             txtDateReg.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
 
@@ -68,7 +65,7 @@ namespace CIS.Presentation.UI.WindowsForms
                 MessageBox.Show("New Patient Registered");
             }
 
-            this.Close(); 
+            this.Close();
 
 
         }
