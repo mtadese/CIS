@@ -72,7 +72,7 @@ namespace CIS.Presentation.UI.WindowsForms
 
         private void newToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmNewClinician clinic1 = new frmNewClinician();
+            frmNewClinic clinic1 = new frmNewClinic();
             clinic1.ShowDialog();
         }
 

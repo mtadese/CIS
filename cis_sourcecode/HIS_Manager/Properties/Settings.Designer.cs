@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CIS.Presentatation.UI.WindowsForms.Properties {
+namespace CIS.Presentation.UI.WindowsForms.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

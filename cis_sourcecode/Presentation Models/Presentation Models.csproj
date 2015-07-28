@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3E9ED676-3E4C-4C29-BC08-D7D856D08CEA}</ProjectGuid>
+    <ProjectGuid>{9B2955C4-FA1A-4986-A8CA-8DFF88AC5DE6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CIS.Presentation.Logic.Presenter</RootNamespace>
-    <AssemblyName>presenter</AssemblyName>
+    <RootNamespace>CIS.Presentation.Models</RootNamespace>
+    <AssemblyName>presentation_models</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,14 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NewClinicPresenter.cs" />
+    <Compile Include="NewClinicPresentationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Presentation Models\Presentation Models.csproj">
-      <Project>{9b2955c4-fa1a-4986-a8ca-8dff88ac5de6}</Project>
-      <Name>Presentation Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

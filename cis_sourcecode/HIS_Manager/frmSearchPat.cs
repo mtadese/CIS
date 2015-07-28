@@ -27,7 +27,7 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             //connecting string for the C# application to MySql database
             this.Height = 155;
-            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
+            con = new SqlConnection(CIS.Presentation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
 
             pid = txtpid2;

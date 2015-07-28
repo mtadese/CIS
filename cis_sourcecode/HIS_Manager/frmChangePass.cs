@@ -20,7 +20,7 @@ namespace CIS.Presentation.UI.WindowsForms
 
         private void frmChangePass_Load(object sender, EventArgs e)
         {
-            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
+            con = new SqlConnection(CIS.Presentation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
         }
 

@@ -28,7 +28,7 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             tb  = txtpid2 ;
 
-            con = new SqlConnection(CIS.Presentatation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
+            con = new SqlConnection(CIS.Presentation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
 
             Load_Users();

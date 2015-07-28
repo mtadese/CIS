@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CIS.Presentatation.UI.WindowsForms.Properties {
+namespace CIS.Presentation.UI.WindowsForms.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace CIS.Presentatation.UI.WindowsForms.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CIS.Presentatation.UI.WindowsForms.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CIS.Presentation.UI.WindowsForms.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CIS.Presentation.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,16 @@ namespace CIS.Presentation.Logic.Presenter
         {
             this._view = view;
         }
+
+        public void Save()
+        { 
+
+        }
     }
 
     public interface INewClinicView
     {
-        void Initialize();
-        void Save();
+        void LoadTitles();
+        NewClinicPresentationModel Save();
     }
 }
