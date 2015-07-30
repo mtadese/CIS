@@ -20,25 +20,31 @@ namespace CIS.Presentation.UI.WindowsForms
 
         private void frmClinicsList_Load(object sender, EventArgs e)
         {
-            con = new SqlConnection(CIS.Presentation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
-            con.Open();
-            //display list of clinicians in the system
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Select clnc_sys_id, clnc_id, title, lastname, specialty from Clinicians";
-            adap = new SqlDataAdapter(cmd);
-            ds1 = new DataSet();
-            adap.Fill(ds1, "clinicians");
-            dataGridView1.DataSource = ds1.Tables[0];
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                con = new SqlConnection(Properties.Settings.Default.LocalDB);
+                con.Open();
+                //display list of clinicians in the system
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "Select clnc_sys_id, clnc_id, title, lastname, specialty from Clinic";
+                adap = new SqlDataAdapter(cmd);
+                ds1 = new DataSet();
+                adap.Fill(ds1, "clinicians");
+                dataGridView1.DataSource = ds1.Tables[0];
+                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            clID = txtclID;
-
+                clID = txtclID;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void btnNewC_Click(object sender, EventArgs e)
         {
             //display form to create new clinician
-            frmNewClinician create = new frmNewClinician();
+            frmNewClinic create = new frmNewClinic();
             create.ShowDialog();
 
         }

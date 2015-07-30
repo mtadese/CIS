@@ -42,7 +42,7 @@ namespace CIS.Presentation.UI.WindowsForms
                 else
                     //inserting data from the textbox controls into the MySql database
                     cmd = con.CreateCommand();
-                cmd.CommandText = "INSERT INTO appointments(clinician_id, clinician_name, patient_id, hospital_number, patient_name, date_of_appointment, time_of_appointment, purpose_of_appointment, date_created)VALUES(@clinicID, @clinicianName, @patientID, @hospitalNumber, @patientName, @apptDate, @apptTime, @apptPurpose, @dateCreated)";
+                cmd.CommandText = "INSERT INTO appointment(clinician_id, clinician_name, patient_id, hospital_number, patient_name, date_of_appointment, time_of_appointment, purpose_of_appointment, date_created)VALUES(@clinicID, @clinicianName, @patientID, @hospitalNumber, @patientName, @apptDate, @apptTime, @apptPurpose, @dateCreated)";
                 cmd.Parameters.AddWithValue("@clinicID", txtCNum.Text);
                 cmd.Parameters.AddWithValue("@clinicianName", txtPatConsultant.Text);
                 cmd.Parameters.AddWithValue("@patientID", txtPid.Text);
@@ -74,7 +74,7 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             //function to import clinicians record to select for booking appointment
             cmd = con.CreateCommand();
-            cmd.CommandText = "Select title, lastname, clnc_id  from Clinicians";
+            cmd.CommandText = "Select title, lastname, clnc_id  from Clinic";
             adap = new SqlDataAdapter(cmd);
             ds = new DataSet();
             adap.Fill(ds, "clinicians");
@@ -144,7 +144,7 @@ namespace CIS.Presentation.UI.WindowsForms
             try
             {
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "Select hospitalNumber, lName, fName from Patients where Patient_ID = '" + txtPid.Text + "' ";
+                cmd.CommandText = "Select hospitalNumber, lName, fName from Patient where Patient_ID = '" + txtPid.Text + "' ";
                 dr = cmd.ExecuteReader();
 
                 if (dr.Read())

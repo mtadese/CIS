@@ -1,6 +1,6 @@
 ﻿namespace CIS.Presentation.UI.WindowsForms
 {
-    partial class frmSearchPat
+    partial class frmSearchPatient
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSearchPat));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSearchPatient));
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(132, 91);
+            this.btnSearch.Location = new System.Drawing.Point(274, 65);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(90, 23);
             this.btnSearch.TabIndex = 4;
@@ -79,7 +79,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 65);
+            this.label10.Location = new System.Drawing.Point(12, 41);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(85, 13);
             this.label10.TabIndex = 46;
@@ -88,7 +88,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(251, 65);
+            this.label4.Location = new System.Drawing.Point(255, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 44;
@@ -97,7 +97,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(251, 37);
+            this.label3.Location = new System.Drawing.Point(255, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 43;
@@ -106,7 +106,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 37);
+            this.label1.Location = new System.Drawing.Point(12, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 42;
@@ -115,7 +115,7 @@
             // txtFname
             // 
             this.txtFname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFname.Location = new System.Drawing.Point(310, 58);
+            this.txtFname.Location = new System.Drawing.Point(318, 39);
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(139, 20);
             this.txtFname.TabIndex = 3;
@@ -123,7 +123,7 @@
             // txtLname
             // 
             this.txtLname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLname.Location = new System.Drawing.Point(310, 30);
+            this.txtLname.Location = new System.Drawing.Point(318, 12);
             this.txtLname.Name = "txtLname";
             this.txtLname.Size = new System.Drawing.Size(139, 20);
             this.txtLname.TabIndex = 2;
@@ -131,7 +131,7 @@
             // txtHospNum
             // 
             this.txtHospNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtHospNum.Location = new System.Drawing.Point(95, 58);
+            this.txtHospNum.Location = new System.Drawing.Point(101, 38);
             this.txtHospNum.Name = "txtHospNum";
             this.txtHospNum.Size = new System.Drawing.Size(148, 20);
             this.txtHospNum.TabIndex = 1;
@@ -139,7 +139,7 @@
             // txtPid
             // 
             this.txtPid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPid.Location = new System.Drawing.Point(95, 32);
+            this.txtPid.Location = new System.Drawing.Point(101, 12);
             this.txtPid.Name = "txtPid";
             this.txtPid.Size = new System.Drawing.Size(148, 20);
             this.txtPid.TabIndex = 0;
@@ -147,7 +147,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(228, 91);
+            this.button1.Location = new System.Drawing.Point(370, 65);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 23);
             this.button1.TabIndex = 5;
@@ -170,9 +170,9 @@
             // 
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.txtpid2);
-            this.groupBox1.Location = new System.Drawing.Point(9, 299);
+            this.groupBox1.Location = new System.Drawing.Point(9, 279);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(136, 64);
+            this.groupBox1.Size = new System.Drawing.Size(136, 89);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             // 
@@ -211,12 +211,9 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // frmSearchPat
+            // frmSearchPatient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(455, 380);
+            this.ClientSize = new System.Drawing.Size(472, 422);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
@@ -233,7 +230,7 @@
             this.Controls.Add(this.txtPid);
             this.Controls.Add(this.btnSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmSearchPat";
+            this.Name = "frmSearchPatient";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Find Patient";

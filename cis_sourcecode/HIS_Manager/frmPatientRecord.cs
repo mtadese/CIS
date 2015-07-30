@@ -43,7 +43,7 @@ namespace CIS.Presentation.UI.WindowsForms
 
         private void Load_PatientRecord()
         {
-            string a = frmSearchPat.pid.Text;
+            string a = frmSearchPatient.pid.Text;
 
             //importing data from the MySql database into the patient record form
             SqlCommand cmd = con.CreateCommand();

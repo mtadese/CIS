@@ -70,6 +70,11 @@
             // 
             this.cboTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTitle.FormattingEnabled = true;
+            this.cboTitle.Items.AddRange(new object[] {
+            "Mr",
+            "Mrs",
+            "Miss",
+            "Ms"});
             this.cboTitle.Location = new System.Drawing.Point(128, 38);
             this.cboTitle.Name = "cboTitle";
             this.cboTitle.Size = new System.Drawing.Size(144, 21);

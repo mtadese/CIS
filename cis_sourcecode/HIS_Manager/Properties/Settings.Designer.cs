@@ -26,7 +26,7 @@ namespace CIS.Presentation.UI.WindowsForms.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\Users\\admin\\Source\\Repos\\CIS\\cis_" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\Users\\Pablo\\Source\\Repos\\CIS\\cis_" +
             "sourcecode\\HIS_Manager\\database.mdf;Integrated Security=True")]
         public string LocalDB {
             get {

@@ -60,7 +60,7 @@ namespace CIS.Presentation.UI.WindowsForms
 
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSearchPat search = new frmSearchPat();
+            frmSearchPatient search = new frmSearchPatient();
             search.ShowDialog();
         }
 

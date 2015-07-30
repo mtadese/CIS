@@ -10,9 +10,9 @@ using System.Data.SqlClient;
 
 namespace CIS.Presentation.UI.WindowsForms
 {
-    public partial class frmSearchPat : Form
+    public partial class frmSearchPatient : Form
     {
-        public frmSearchPat()
+        public frmSearchPatient()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             //connecting string for the C# application to MySql database
             this.Height = 155;
-            con = new SqlConnection(CIS.Presentation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
+            con = new SqlConnection(Properties.Settings.Default.LocalDB);
             con.Open();
 
             pid = txtpid2;
@@ -45,7 +45,7 @@ namespace CIS.Presentation.UI.WindowsForms
             else if (txtLname.Text == "")
             {
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "Select * from Patients where fName= '" + txtFname.Text + "' or Patient_ID = '" + txtPid.Text + "' or HospitalNumber = '" + txtHospNum.Text + "'  ";
+                cmd.CommandText = "Select * from Patient where fName= '" + txtFname.Text + "' or Patient_ID = '" + txtPid.Text + "' or HospitalNumber = '" + txtHospNum.Text + "'  ";
                 adap = new SqlDataAdapter(cmd);
                 ds1 = new DataSet();
                 adap.Fill(ds1, "patients");
@@ -59,7 +59,7 @@ namespace CIS.Presentation.UI.WindowsForms
             else
             {
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "Select * from Patients where lName like '" + txtLname.Text + "%" + "' or fName= '" + txtFname.Text + "' or Patient_ID = '" + txtPid.Text + "' or HospitalNumber = '" + txtHospNum.Text + "' ";
+                cmd.CommandText = "Select * from Patient where lName like '" + txtLname.Text + "%" + "' or fName= '" + txtFname.Text + "' or Patient_ID = '" + txtPid.Text + "' or HospitalNumber = '" + txtHospNum.Text + "' ";
                 adap = new SqlDataAdapter(cmd);
                 ds1 = new DataSet();
                 adap.Fill(ds1, "patients");
