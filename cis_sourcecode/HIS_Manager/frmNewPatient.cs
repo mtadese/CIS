@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-//references for connecting to MySql database
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
