@@ -46,15 +46,15 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.PaleGoldenrod;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 58);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(354, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(365, 150);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnNewC
             // 
-            this.btnNewC.Location = new System.Drawing.Point(1, 229);
+            this.btnNewC.Location = new System.Drawing.Point(21, 168);
             this.btnNewC.Name = "btnNewC";
             this.btnNewC.Size = new System.Drawing.Size(96, 23);
             this.btnNewC.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             // btnEditC
             // 
-            this.btnEditC.Location = new System.Drawing.Point(103, 229);
+            this.btnEditC.Location = new System.Drawing.Point(123, 168);
             this.btnEditC.Name = "btnEditC";
             this.btnEditC.Size = new System.Drawing.Size(75, 23);
             this.btnEditC.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             // btnBookAppt
             // 
-            this.btnBookAppt.Location = new System.Drawing.Point(184, 229);
+            this.btnBookAppt.Location = new System.Drawing.Point(204, 168);
             this.btnBookAppt.Name = "btnBookAppt";
             this.btnBookAppt.Size = new System.Drawing.Size(109, 23);
             this.btnBookAppt.TabIndex = 3;
@@ -91,7 +91,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(297, 229);
+            this.btnCancel.Location = new System.Drawing.Point(319, 168);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(58, 23);
             this.btnCancel.TabIndex = 5;
@@ -101,8 +101,7 @@
             // 
             // frmClinicsList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(356, 257);
+            this.ClientSize = new System.Drawing.Size(389, 201);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtclID);
             this.Controls.Add(this.btnBookAppt);

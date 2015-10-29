@@ -47,24 +47,21 @@
             // 
             // txtFName
             // 
-            this.txtFName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFName.Location = new System.Drawing.Point(87, 55);
+            this.txtFName.Location = new System.Drawing.Point(87, 38);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(185, 20);
             this.txtFName.TabIndex = 1;
             // 
             // txtLName
             // 
-            this.txtLName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLName.Location = new System.Drawing.Point(87, 81);
+            this.txtLName.Location = new System.Drawing.Point(87, 64);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(185, 20);
             this.txtLName.TabIndex = 2;
             // 
             // txtPassword
             // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Location = new System.Drawing.Point(87, 133);
+            this.txtPassword.Location = new System.Drawing.Point(87, 116);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(185, 20);
             this.txtPassword.TabIndex = 4;
@@ -72,16 +69,14 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsername.Location = new System.Drawing.Point(87, 107);
+            this.txtUsername.Location = new System.Drawing.Point(87, 90);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(185, 20);
             this.txtUsername.TabIndex = 3;
             // 
             // txtProfile
             // 
-            this.txtProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtProfile.Location = new System.Drawing.Point(87, 159);
+            this.txtProfile.Location = new System.Drawing.Point(87, 142);
             this.txtProfile.Name = "txtProfile";
             this.txtProfile.Size = new System.Drawing.Size(185, 20);
             this.txtProfile.TabIndex = 5;
@@ -89,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 55);
+            this.label1.Location = new System.Drawing.Point(12, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 10;
@@ -98,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 81);
+            this.label2.Location = new System.Drawing.Point(12, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 11;
@@ -107,7 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 133);
+            this.label3.Location = new System.Drawing.Point(12, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 13;
@@ -116,7 +111,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 107);
+            this.label4.Location = new System.Drawing.Point(12, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 12;
@@ -125,7 +120,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 159);
+            this.label6.Location = new System.Drawing.Point(12, 145);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 14;
@@ -133,7 +128,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(116, 197);
+            this.btnSave.Location = new System.Drawing.Point(116, 168);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 6;
@@ -143,7 +138,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(197, 197);
+            this.btnCancel.Location = new System.Drawing.Point(197, 168);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 7;
@@ -154,7 +149,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 28);
+            this.label5.Location = new System.Drawing.Point(12, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 19;
@@ -162,8 +157,7 @@
             // 
             // txtStaffID
             // 
-            this.txtStaffID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStaffID.Location = new System.Drawing.Point(87, 28);
+            this.txtStaffID.Location = new System.Drawing.Point(87, 12);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(185, 20);
             this.txtStaffID.TabIndex = 0;
@@ -172,8 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(284, 239);
+            this.ClientSize = new System.Drawing.Size(284, 204);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtStaffID);
             this.Controls.Add(this.btnCancel);

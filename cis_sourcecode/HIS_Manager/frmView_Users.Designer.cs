@@ -42,18 +42,17 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Tan;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(537, 248);
+            this.dataGridView1.Size = new System.Drawing.Size(513, 195);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(198, 219);
+            this.btnAddUser.Location = new System.Drawing.Point(257, 213);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(75, 23);
             this.btnAddUser.TabIndex = 1;
@@ -63,7 +62,7 @@
             // 
             // btnChangePass
             // 
-            this.btnChangePass.Location = new System.Drawing.Point(279, 219);
+            this.btnChangePass.Location = new System.Drawing.Point(338, 213);
             this.btnChangePass.Name = "btnChangePass";
             this.btnChangePass.Size = new System.Drawing.Size(106, 23);
             this.btnChangePass.TabIndex = 2;
@@ -81,7 +80,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(391, 219);
+            this.btnCancel.Location = new System.Drawing.Point(450, 213);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 54;
@@ -93,7 +92,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(537, 248);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtpid2);

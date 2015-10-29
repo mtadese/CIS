@@ -134,15 +134,14 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(1, 29);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(847, 371);
+            this.tabControl1.Size = new System.Drawing.Size(851, 371);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage1.Controls.Add(this.btnSearchClinic);
             this.tabPage1.Controls.Add(this.label36);
@@ -186,7 +185,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(839, 345);
+            this.tabPage1.Size = new System.Drawing.Size(843, 345);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Personal Detail";
             // 
@@ -211,7 +210,6 @@
             // 
             // txtPatConsultant
             // 
-            this.txtPatConsultant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPatConsultant.Location = new System.Drawing.Point(438, 17);
             this.txtPatConsultant.Name = "txtPatConsultant";
             this.txtPatConsultant.Size = new System.Drawing.Size(138, 20);
@@ -268,7 +266,7 @@
             // 
             // txtPatImage
             // 
-            this.txtPatImage.Location = new System.Drawing.Point(699, 185);
+            this.txtPatImage.Location = new System.Drawing.Point(715, 161);
             this.txtPatImage.Name = "txtPatImage";
             this.txtPatImage.Size = new System.Drawing.Size(119, 20);
             this.txtPatImage.TabIndex = 79;
@@ -302,7 +300,6 @@
             // 
             // txtOAddress
             // 
-            this.txtOAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOAddress.Location = new System.Drawing.Point(438, 277);
             this.txtOAddress.Multiline = true;
             this.txtOAddress.Name = "txtOAddress";
@@ -311,7 +308,6 @@
             // 
             // txtState
             // 
-            this.txtState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtState.Location = new System.Drawing.Point(438, 244);
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(194, 20);
@@ -436,7 +432,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(719, 163);
+            this.button3.Location = new System.Drawing.Point(715, 132);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 16;
@@ -446,17 +442,16 @@
             // 
             // picPatImage
             // 
-            this.picPatImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picPatImage.Location = new System.Drawing.Point(699, 28);
+            this.picPatImage.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.picPatImage.Location = new System.Drawing.Point(715, 6);
             this.picPatImage.Name = "picPatImage";
-            this.picPatImage.Size = new System.Drawing.Size(119, 133);
+            this.picPatImage.Size = new System.Drawing.Size(120, 120);
             this.picPatImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPatImage.TabIndex = 13;
             this.picPatImage.TabStop = false;
             // 
             // txtCity
             // 
-            this.txtCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCity.Location = new System.Drawing.Point(438, 211);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(194, 20);
@@ -464,7 +459,6 @@
             // 
             // txtHAddress
             // 
-            this.txtHAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHAddress.Location = new System.Drawing.Point(438, 151);
             this.txtHAddress.Multiline = true;
             this.txtHAddress.Name = "txtHAddress";
@@ -473,7 +467,6 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Location = new System.Drawing.Point(438, 118);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(194, 20);
@@ -481,7 +474,6 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone.Location = new System.Drawing.Point(438, 85);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(194, 20);
@@ -489,7 +481,6 @@
             // 
             // txtMPhone
             // 
-            this.txtMPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMPhone.Location = new System.Drawing.Point(438, 52);
             this.txtMPhone.Name = "txtMPhone";
             this.txtMPhone.Size = new System.Drawing.Size(194, 20);
@@ -497,7 +488,6 @@
             // 
             // txtDob
             // 
-            this.txtDob.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDob.Location = new System.Drawing.Point(118, 259);
             this.txtDob.Name = "txtDob";
             this.txtDob.Size = new System.Drawing.Size(170, 20);
@@ -505,7 +495,6 @@
             // 
             // txtMname
             // 
-            this.txtMname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMname.Location = new System.Drawing.Point(118, 189);
             this.txtMname.Name = "txtMname";
             this.txtMname.Size = new System.Drawing.Size(194, 20);
@@ -513,7 +502,6 @@
             // 
             // txtFname
             // 
-            this.txtFname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFname.Location = new System.Drawing.Point(118, 154);
             this.txtFname.Name = "txtFname";
@@ -522,7 +510,6 @@
             // 
             // txtLname
             // 
-            this.txtLname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLname.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLname.Location = new System.Drawing.Point(118, 119);
             this.txtLname.Name = "txtLname";
@@ -531,7 +518,6 @@
             // 
             // txtHospNum
             // 
-            this.txtHospNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHospNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHospNum.Location = new System.Drawing.Point(118, 49);
             this.txtHospNum.Name = "txtHospNum";
@@ -542,7 +528,6 @@
             // txtPid
             // 
             this.txtPid.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtPid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPid.Location = new System.Drawing.Point(118, 14);
             this.txtPid.Name = "txtPid";
@@ -552,7 +537,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage2.Controls.Add(this.cmbNokRelationship);
             this.tabPage2.Controls.Add(this.cmbNIDType);
@@ -596,7 +580,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(839, 345);
+            this.tabPage2.Size = new System.Drawing.Size(843, 345);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Additional Detail";
             // 
@@ -953,15 +937,14 @@
             // 
             // grpClinics
             // 
-            this.grpClinics.BackColor = System.Drawing.Color.DarkGray;
             this.grpClinics.Controls.Add(this.label37);
             this.grpClinics.Controls.Add(this.button1);
             this.grpClinics.Controls.Add(this.btnLoadClinic);
             this.grpClinics.Controls.Add(this.dgridClinics);
             this.grpClinics.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.grpClinics.Location = new System.Drawing.Point(376, 435);
+            this.grpClinics.Location = new System.Drawing.Point(387, 418);
             this.grpClinics.Name = "grpClinics";
-            this.grpClinics.Size = new System.Drawing.Size(237, 270);
+            this.grpClinics.Size = new System.Drawing.Size(476, 270);
             this.grpClinics.TabIndex = 86;
             this.grpClinics.TabStop = false;
             this.grpClinics.Visible = false;
@@ -971,15 +954,16 @@
             this.label37.BackColor = System.Drawing.Color.Navy;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label37.Location = new System.Drawing.Point(3, 10);
+            this.label37.Location = new System.Drawing.Point(6, 16);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(234, 18);
+            this.label37.Size = new System.Drawing.Size(464, 18);
             this.label37.TabIndex = 20;
             this.label37.Text = "Clinicians";
+            this.label37.Click += new System.EventHandler(this.label37_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(176, 60);
+            this.button1.Location = new System.Drawing.Point(415, 68);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 25);
             this.button1.TabIndex = 19;
@@ -989,7 +973,7 @@
             // 
             // btnLoadClinic
             // 
-            this.btnLoadClinic.Location = new System.Drawing.Point(176, 31);
+            this.btnLoadClinic.Location = new System.Drawing.Point(415, 37);
             this.btnLoadClinic.Name = "btnLoadClinic";
             this.btnLoadClinic.Size = new System.Drawing.Size(55, 25);
             this.btnLoadClinic.TabIndex = 18;
@@ -1005,16 +989,16 @@
             this.dgridClinics.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dgridClinics.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgridClinics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgridClinics.Location = new System.Drawing.Point(6, 31);
+            this.dgridClinics.Location = new System.Drawing.Point(6, 37);
             this.dgridClinics.Name = "dgridClinics";
             this.dgridClinics.ReadOnly = true;
-            this.dgridClinics.Size = new System.Drawing.Size(164, 233);
+            this.dgridClinics.Size = new System.Drawing.Size(403, 227);
             this.dgridClinics.TabIndex = 17;
             this.dgridClinics.DoubleClick += new System.EventHandler(this.dgridClinics_DoubleClick);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(667, 406);
+            this.button2.Location = new System.Drawing.Point(691, 389);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 17;
@@ -1024,7 +1008,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(567, 406);
+            this.btnUpdate.Location = new System.Drawing.Point(594, 389);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(91, 23);
             this.btnUpdate.TabIndex = 16;
@@ -1039,9 +1023,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 425);
+            this.groupBox1.Location = new System.Drawing.Point(12, 418);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(358, 115);
+            this.groupBox1.Size = new System.Drawing.Size(369, 115);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -1049,15 +1033,16 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 13);
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(3, 16);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(331, 96);
+            this.richTextBox1.Size = new System.Drawing.Size(363, 96);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "Patient Record";
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(749, 406);
+            this.btnPrint.Location = new System.Drawing.Point(772, 389);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(91, 23);
             this.btnPrint.TabIndex = 19;
@@ -1069,8 +1054,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(847, 449);
+            this.ClientSize = new System.Drawing.Size(875, 698);
             this.Controls.Add(this.grpClinics);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.groupBox1);

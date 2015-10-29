@@ -249,13 +249,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="database.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="database_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>database.mdf</DependentUpon>
-    </Content>
     <Content Include="favicon1.ico" />
   </ItemGroup>
   <ItemGroup>

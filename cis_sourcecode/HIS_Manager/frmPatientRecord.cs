@@ -398,6 +398,11 @@ namespace CIS.Presentation.UI.WindowsForms
             }
         }
 
+        private void label37_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 
 }
