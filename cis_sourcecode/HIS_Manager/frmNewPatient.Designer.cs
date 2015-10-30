@@ -30,12 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewPatient));
             this.txtPid = new System.Windows.Forms.TextBox();
-            this.txtHospNum = new System.Windows.Forms.TextBox();
-            this.txtLname = new System.Windows.Forms.TextBox();
-            this.txtFname = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtMname = new System.Windows.Forms.TextBox();
-            this.txtDob = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,11 +47,12 @@
             this.txtHomeAdd = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtDateReg = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cmbtitle = new System.Windows.Forms.ComboBox();
-            this.cmbMStatus = new System.Windows.Forms.ComboBox();
-            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.cboTitle = new System.Windows.Forms.ComboBox();
+            this.cboMaritalStatus = new System.Windows.Forms.ComboBox();
+            this.cboGender = new System.Windows.Forms.ComboBox();
+            this.mtbHospitalId = new System.Windows.Forms.MaskedTextBox();
+            this.mtbPhone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // txtPid
@@ -67,26 +65,19 @@
             this.txtPid.TabIndex = 0;
             this.txtPid.Visible = false;
             // 
-            // txtHospNum
+            // txtLastName
             // 
-            this.txtHospNum.Location = new System.Drawing.Point(105, 38);
-            this.txtHospNum.Name = "txtHospNum";
-            this.txtHospNum.Size = new System.Drawing.Size(198, 20);
-            this.txtHospNum.TabIndex = 1;
+            this.txtLastName.Location = new System.Drawing.Point(105, 91);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(198, 20);
+            this.txtLastName.TabIndex = 3;
             // 
-            // txtLname
+            // txtFirstName
             // 
-            this.txtLname.Location = new System.Drawing.Point(105, 91);
-            this.txtLname.Name = "txtLname";
-            this.txtLname.Size = new System.Drawing.Size(198, 20);
-            this.txtLname.TabIndex = 3;
-            // 
-            // txtFname
-            // 
-            this.txtFname.Location = new System.Drawing.Point(105, 117);
-            this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(198, 20);
-            this.txtFname.TabIndex = 4;
+            this.txtFirstName.Location = new System.Drawing.Point(105, 117);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(198, 20);
+            this.txtFirstName.TabIndex = 4;
             // 
             // txtMname
             // 
@@ -94,20 +85,6 @@
             this.txtMname.Name = "txtMname";
             this.txtMname.Size = new System.Drawing.Size(198, 20);
             this.txtMname.TabIndex = 5;
-            // 
-            // txtDob
-            // 
-            this.txtDob.Location = new System.Drawing.Point(105, 196);
-            this.txtDob.Name = "txtDob";
-            this.txtDob.Size = new System.Drawing.Size(172, 20);
-            this.txtDob.TabIndex = 7;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(105, 222);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(198, 20);
-            this.txtPhone.TabIndex = 8;
             // 
             // button1
             // 
@@ -237,72 +214,77 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "Marital Status";
             // 
-            // txtDateReg
+            // dtpBirthDate
             // 
-            this.txtDateReg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDateReg.Location = new System.Drawing.Point(105, 347);
-            this.txtDateReg.Name = "txtDateReg";
-            this.txtDateReg.Size = new System.Drawing.Size(198, 20);
-            this.txtDateReg.TabIndex = 24;
-            this.txtDateReg.Visible = false;
+            this.dtpBirthDate.Location = new System.Drawing.Point(105, 196);
+            this.dtpBirthDate.Name = "dtpBirthDate";
+            this.dtpBirthDate.Size = new System.Drawing.Size(198, 20);
+            this.dtpBirthDate.TabIndex = 81;
             // 
-            // dateTimePicker1
+            // cboTitle
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(283, 196);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(20, 20);
-            this.dateTimePicker1.TabIndex = 81;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // cmbtitle
-            // 
-            this.cmbtitle.FormattingEnabled = true;
-            this.cmbtitle.Items.AddRange(new object[] {
+            this.cboTitle.FormattingEnabled = true;
+            this.cboTitle.Items.AddRange(new object[] {
             "Mr.",
             "Mrs.",
             "Miss.",
             "Ms.",
             "Dr."});
-            this.cmbtitle.Location = new System.Drawing.Point(105, 64);
-            this.cmbtitle.Name = "cmbtitle";
-            this.cmbtitle.Size = new System.Drawing.Size(64, 21);
-            this.cmbtitle.TabIndex = 82;
+            this.cboTitle.Location = new System.Drawing.Point(105, 64);
+            this.cboTitle.Name = "cboTitle";
+            this.cboTitle.Size = new System.Drawing.Size(64, 21);
+            this.cboTitle.TabIndex = 82;
             // 
-            // cmbMStatus
+            // cboMaritalStatus
             // 
-            this.cmbMStatus.FormattingEnabled = true;
-            this.cmbMStatus.Items.AddRange(new object[] {
+            this.cboMaritalStatus.FormattingEnabled = true;
+            this.cboMaritalStatus.Items.AddRange(new object[] {
             "Single",
             "Married",
             "Divorced",
             "Widowed"});
-            this.cmbMStatus.Location = new System.Drawing.Point(105, 291);
-            this.cmbMStatus.Name = "cmbMStatus";
-            this.cmbMStatus.Size = new System.Drawing.Size(122, 21);
-            this.cmbMStatus.TabIndex = 85;
+            this.cboMaritalStatus.Location = new System.Drawing.Point(105, 291);
+            this.cboMaritalStatus.Name = "cboMaritalStatus";
+            this.cboMaritalStatus.Size = new System.Drawing.Size(122, 21);
+            this.cboMaritalStatus.TabIndex = 85;
             // 
-            // cmbGender
+            // cboGender
             // 
-            this.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Items.AddRange(new object[] {
+            this.cboGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGender.FormattingEnabled = true;
+            this.cboGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cmbGender.Location = new System.Drawing.Point(105, 169);
-            this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(122, 21);
-            this.cmbGender.TabIndex = 84;
+            this.cboGender.Location = new System.Drawing.Point(105, 169);
+            this.cboGender.Name = "cboGender";
+            this.cboGender.Size = new System.Drawing.Size(122, 21);
+            this.cboGender.TabIndex = 84;
+            // 
+            // mtbHospitalId
+            // 
+            this.mtbHospitalId.Location = new System.Drawing.Point(105, 38);
+            this.mtbHospitalId.Name = "mtbHospitalId";
+            this.mtbHospitalId.Size = new System.Drawing.Size(198, 20);
+            this.mtbHospitalId.TabIndex = 86;
+            // 
+            // mtbPhone
+            // 
+            this.mtbPhone.Location = new System.Drawing.Point(105, 222);
+            this.mtbPhone.Name = "mtbPhone";
+            this.mtbPhone.Size = new System.Drawing.Size(198, 20);
+            this.mtbPhone.TabIndex = 87;
             // 
             // frmNewPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(315, 354);
-            this.Controls.Add(this.cmbMStatus);
-            this.Controls.Add(this.cmbGender);
-            this.Controls.Add(this.cmbtitle);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.txtDateReg);
+            this.Controls.Add(this.mtbPhone);
+            this.Controls.Add(this.mtbHospitalId);
+            this.Controls.Add(this.cboMaritalStatus);
+            this.Controls.Add(this.cboGender);
+            this.Controls.Add(this.cboTitle);
+            this.Controls.Add(this.dtpBirthDate);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtHomeAdd);
@@ -317,19 +299,15 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtDob);
             this.Controls.Add(this.txtMname);
-            this.Controls.Add(this.txtFname);
-            this.Controls.Add(this.txtLname);
-            this.Controls.Add(this.txtHospNum);
+            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtPid);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNewPatient";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewPatient";
-            this.Load += new System.EventHandler(this.frmNewPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,12 +316,9 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtPid;
-        private System.Windows.Forms.TextBox txtHospNum;
-        private System.Windows.Forms.TextBox txtLname;
-        private System.Windows.Forms.TextBox txtFname;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtMname;
-        private System.Windows.Forms.TextBox txtDob;
-        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
@@ -358,10 +333,11 @@
         private System.Windows.Forms.TextBox txtHomeAdd;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtDateReg;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox cmbtitle;
-        private System.Windows.Forms.ComboBox cmbMStatus;
-        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.DateTimePicker dtpBirthDate;
+        private System.Windows.Forms.ComboBox cboTitle;
+        private System.Windows.Forms.ComboBox cboMaritalStatus;
+        private System.Windows.Forms.ComboBox cboGender;
+        private System.Windows.Forms.MaskedTextBox mtbHospitalId;
+        private System.Windows.Forms.MaskedTextBox mtbPhone;
     }
 }

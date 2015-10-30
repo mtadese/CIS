@@ -1,5 +1,5 @@
-﻿using CIS.Presentation.Logic.Presenter;
-using CIS.Presentation.Models;
+﻿//using CIS.Presentation.Logic.Presenter;
+//using CIS.Presentation.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace CIS.Presentation.UI.WindowsForms
 {
-    public partial class frmNewClinic : Form, INewClinicView
+    public partial class frmNewClinic : Form // , INewClinicView
     {
-        private NewClinicPresenter _presenter;
+        // private NewClinicPresenter _presenter;
 
         SqlConnection con;
         SqlCommand cmd;
@@ -25,7 +25,7 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             InitializeComponent();
 
-            this._presenter = new NewClinicPresenter(this);
+            // this._presenter = new NewClinicPresenter(this);
         }
 
         private void frmNewClinic_Load(object sender, EventArgs e)
@@ -70,20 +70,20 @@ namespace CIS.Presentation.UI.WindowsForms
             throw new NotImplementedException();
         }
 
-        public NewClinicPresentationModel Save()
-        {
-            return new NewClinicPresentationModel() 
-            {
-                Address = this.txtAddress.Text,
-                Department = this.txtDepartment.Text,
-                Email = this.txtEmail.Text,
-                FirstName = this.txtFirstName.Text,
-                InternalCode = this.txtClinicNumber.Text,
-                LastName = this.txtLastName.Text,
-                Specialty = this.txtSpecialty.Text,
-                Telephone = this.txtTelephone.Text,
-                Title = this.cboTitle.SelectedIndex
-            };
-        }
+        //public NewClinicPresentationModel Save()
+        //{
+        //    return new NewClinicPresentationModel() 
+        //    {
+        //        Address = this.txtAddress.Text,
+        //        Department = this.txtDepartment.Text,
+        //        Email = this.txtEmail.Text,
+        //        FirstName = this.txtFirstName.Text,
+        //        InternalCode = this.txtClinicNumber.Text,
+        //        LastName = this.txtLastName.Text,
+        //        Specialty = this.txtSpecialty.Text,
+        //        Telephone = this.txtTelephone.Text,
+        //        Title = this.cboTitle.SelectedIndex
+        //    };
+        //}
     }
 }

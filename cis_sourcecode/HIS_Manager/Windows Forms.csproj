@@ -59,7 +59,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -238,6 +247,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -284,13 +294,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Presentation Models\Presentation Models.csproj">
-      <Project>{9b2955c4-fa1a-4986-a8ca-8dff88ac5de6}</Project>
-      <Name>Presentation Models</Name>
+    <ProjectReference Include="..\Business Entities\Business Entities.csproj">
+      <Project>{fdbb4eaf-7cb8-47bc-8b02-12c00db5b560}</Project>
+      <Name>Business Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Presenter\Presenter.csproj">
-      <Project>{3e9ed676-3e4c-4c29-bc08-d7d856d08cea}</Project>
-      <Name>Presenter</Name>
+    <ProjectReference Include="..\Data Access\Data Access.csproj">
+      <Project>{8422faf0-0c10-4168-8e9b-440d4e868c08}</Project>
+      <Name>Data Access</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
