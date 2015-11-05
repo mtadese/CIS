@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace CIS.Application.Entities
 {
     public class Clinic
     {
+        [Key]
         public int Identifier { get; set; }
         public string InternalCode { get; set; }
         public int Title { get; set; }

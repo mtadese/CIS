@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CIS.Presentation.UI.WindowsForms
@@ -26,7 +20,7 @@ namespace CIS.Presentation.UI.WindowsForms
         
         private void Form1_Load(object sender, EventArgs e)
         {
-            con = new SqlConnection(CIS.Presentation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
+            con = new SqlConnection(Properties.Settings.Default.LocalDB);
             con.Open();
 
             homepage = new frmHome();
@@ -67,14 +61,7 @@ namespace CIS.Presentation.UI.WindowsForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //exiting the application
-            Application.Exit();
-
-        }
-
-        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

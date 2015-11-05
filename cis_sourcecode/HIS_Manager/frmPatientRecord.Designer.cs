@@ -959,7 +959,6 @@
             this.label37.Size = new System.Drawing.Size(464, 18);
             this.label37.TabIndex = 20;
             this.label37.Text = "Clinicians";
-            this.label37.Click += new System.EventHandler(this.label37_Click);
             // 
             // button1
             // 
@@ -989,9 +988,12 @@
             this.dgridClinics.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dgridClinics.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgridClinics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgridClinics.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgridClinics.Location = new System.Drawing.Point(6, 37);
+            this.dgridClinics.MultiSelect = false;
             this.dgridClinics.Name = "dgridClinics";
             this.dgridClinics.ReadOnly = true;
+            this.dgridClinics.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgridClinics.Size = new System.Drawing.Size(403, 227);
             this.dgridClinics.TabIndex = 17;
             this.dgridClinics.DoubleClick += new System.EventHandler(this.dgridClinics_DoubleClick);

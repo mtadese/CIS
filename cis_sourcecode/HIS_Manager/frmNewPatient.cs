@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using CIS.Data.DataAccess;
 using CIS.Application.Entities;
-
 
 namespace CIS.Presentation.UI.WindowsForms
 {
@@ -20,34 +14,8 @@ namespace CIS.Presentation.UI.WindowsForms
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            //conditions for populating mandatory fields before saving into database
-            if (txtLastName.Text == "") { MessageBox.Show("Mandatory Field is empty: Lastname"); }
-
-            else if (txtFirstName.Text == "") { MessageBox.Show("Mandatory Field is empty: Firstname"); }
-
-            else if (cboGender.Text == "") { MessageBox.Show("Mandatory Field is empty: Gender"); }
-            else
-            {
-                //inserting data from the textbox controls into the MySql database
-                cmd = con.CreateCommand();
-                cmd.CommandText = "INSERT INTO Patients(hospitalnumber,title,lname,fname,mname,gender,dateofbirth,phone,homeaddress,maritalstatus,date_registered)VALUES(@hospitalnumber,@title,@lname,@fname,@mname,@gender,@dateofbirth,@phone,@homeaddress,@maritalstatus, @dateRegistered)";
-                cmd.Parameters.AddWithValue("@hospitalnumber", mtbHospitalId.Text);
-                cmd.Parameters.AddWithValue("@title", cboTitle.Text);
-                cmd.Parameters.AddWithValue("@lname", txtLastName.Text);
-                cmd.Parameters.AddWithValue("@fname", txtFirstName.Text);
-                cmd.Parameters.AddWithValue("@mname", txtMname.Text);
-                cmd.Parameters.AddWithValue("@gender", cboGender.Text);
-                cmd.Parameters.AddWithValue("@dateofbirth", DateTime.Parse(txtDob.Text));
-                cmd.Parameters.AddWithValue("@phone", int.Parse(txtPhone.Text));
-                cmd.Parameters.AddWithValue("@homeaddress", txtHomeAdd.Text);
-                cmd.Parameters.AddWithValue("@maritalstatus", cboMaritalStatus.Text);
-                cmd.Parameters.AddWithValue("@dateRegistered", DateTime.Now);
-
-                cmd.ExecuteNonQuery();
-            }
-
             var patient = new Patient
             {
                 HospitalNumber = int.Parse(mtbHospitalId.Text),
@@ -69,12 +37,39 @@ namespace CIS.Presentation.UI.WindowsForms
 
             MessageBox.Show("New Patient Registered");
 
-            this.Close();
+            Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void txtLastName_Validating(object sender, CancelEventArgs e)
         {
-            this.Close();
+            if (txtLastName.Text.Trim().Length != 0 && txtLastName.Text.Any(c => !char.IsLetter(c)))
+            {
+                e.Cancel = true;
+                MessageBox.Show("Mandatory Field is empty: Lastname");
+            }
+        }
+
+        private void txtFirstName_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtLastName.Text.Trim().Length > 0 && txtLastName.Text.Any(c => !char.IsLetter(c)))
+            {
+                e.Cancel = true;
+                MessageBox.Show("Mandatory Field is empty: Firstname");
+            }
+        }
+
+        private void cboGender_Validating(object sender, CancelEventArgs e)
+        {
+            if (cboGender.SelectedIndex > 0)
+            {
+                e.Cancel = true;
+                MessageBox.Show("Mandatory Field is empty: Gender");
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
