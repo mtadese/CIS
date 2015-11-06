@@ -29,48 +29,49 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClinicsList));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnNewC = new System.Windows.Forms.Button();
-            this.btnEditC = new System.Windows.Forms.Button();
+            this.dgvClinicians = new System.Windows.Forms.DataGridView();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnBookAppt = new System.Windows.Forms.Button();
-            this.txtclID = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClinicians)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvClinicians
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.PaleGoldenrod;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(365, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvClinicians.AllowUserToAddRows = false;
+            this.dgvClinicians.AllowUserToDeleteRows = false;
+            this.dgvClinicians.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClinicians.BackgroundColor = System.Drawing.Color.FloralWhite;
+            this.dgvClinicians.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClinicians.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvClinicians.Location = new System.Drawing.Point(12, 12);
+            this.dgvClinicians.MultiSelect = false;
+            this.dgvClinicians.Name = "dgvClinicians";
+            this.dgvClinicians.ReadOnly = true;
+            this.dgvClinicians.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClinicians.Size = new System.Drawing.Size(365, 150);
+            this.dgvClinicians.TabIndex = 0;
             // 
-            // btnNewC
+            // btnNew
             // 
-            this.btnNewC.Location = new System.Drawing.Point(21, 168);
-            this.btnNewC.Name = "btnNewC";
-            this.btnNewC.Size = new System.Drawing.Size(96, 23);
-            this.btnNewC.TabIndex = 1;
-            this.btnNewC.Text = "Add New Clinic";
-            this.btnNewC.UseVisualStyleBackColor = true;
-            this.btnNewC.Click += new System.EventHandler(this.btnNewC_Click);
+            this.btnNew.Location = new System.Drawing.Point(21, 168);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(96, 23);
+            this.btnNew.TabIndex = 1;
+            this.btnNew.Text = "Add New Clinic";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNewC_Click);
             // 
-            // btnEditC
+            // btnEdit
             // 
-            this.btnEditC.Location = new System.Drawing.Point(123, 168);
-            this.btnEditC.Name = "btnEditC";
-            this.btnEditC.Size = new System.Drawing.Size(75, 23);
-            this.btnEditC.TabIndex = 2;
-            this.btnEditC.Text = "Edit Clinic";
-            this.btnEditC.UseVisualStyleBackColor = true;
-            this.btnEditC.Click += new System.EventHandler(this.btnEditC_Click);
+            this.btnEdit.Location = new System.Drawing.Point(123, 168);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "Edit Clinic";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEditC_Click);
             // 
             // btnBookAppt
             // 
@@ -81,13 +82,6 @@
             this.btnBookAppt.Text = "Book Appointment";
             this.btnBookAppt.UseVisualStyleBackColor = true;
             this.btnBookAppt.Click += new System.EventHandler(this.btnBookAppt_Click);
-            // 
-            // txtclID
-            // 
-            this.txtclID.Location = new System.Drawing.Point(1, 289);
-            this.txtclID.Name = "txtclID";
-            this.txtclID.Size = new System.Drawing.Size(100, 20);
-            this.txtclID.TabIndex = 4;
             // 
             // btnCancel
             // 
@@ -103,30 +97,27 @@
             // 
             this.ClientSize = new System.Drawing.Size(389, 201);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.txtclID);
             this.Controls.Add(this.btnBookAppt);
-            this.Controls.Add(this.btnEditC);
-            this.Controls.Add(this.btnNewC);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnNew);
+            this.Controls.Add(this.dgvClinicians);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmClinicsList";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clinicians List";
             this.Load += new System.EventHandler(this.frmClinicsList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClinicians)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnNewC;
-        private System.Windows.Forms.Button btnEditC;
+        private System.Windows.Forms.DataGridView dgvClinicians;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnBookAppt;
-        private System.Windows.Forms.TextBox txtclID;
         private System.Windows.Forms.Button btnCancel;
     }
 }

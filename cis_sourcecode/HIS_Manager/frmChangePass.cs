@@ -1,62 +1,70 @@
-﻿using System;
-using System.Data;
-using System.Data.SqlClient;
+﻿using CIS.Application.Entities;
+using CIS.Data.DataAccess;
+using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace CIS.Presentation.UI.WindowsForms
 {
     public partial class frmChangePass : Form
     {
+        private User _user;
+
         public frmChangePass()
         {
             InitializeComponent();
         }
 
-        SqlConnection con;
-        SqlCommand cmd;
-        SqlDataAdapter adap;
-        DataSet ds;
-        SqlDataReader dr;
-
-        private void frmChangePass_Load(object sender, EventArgs e)
+        public frmChangePass(User user)
+            : this()
         {
-            con = new SqlConnection(CIS.Presentation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
-            con.Open();
+            _user = user;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string a = frmViewUsers.tb.Text;
-
             if (txtPassConfirm.Text == txtPassword.Text)
             {
+                _user.Password = txtPassword.Text;
 
-                cmd = con.CreateCommand();
-                cmd.CommandText = "UPDATE Logins SET password=@password WHERE username = '" + a + "' ;";
+                using (ClinicModel context = new ClinicModel())
+                {
+                    context.Users.Attach(_user);
 
-                cmd.Parameters.AddWithValue("@password", txtPassword.Text);
-                cmd.ExecuteNonQuery();
+                    context.SaveChanges();
+                }
 
                 MessageBox.Show("Password changed successfully");
-                this.Close();
 
+                Close();
             }
             else
             {
                 MessageBox.Show("Please confirm Password and Confirm Pasword fields match");
                 txtPassword.Text = "";
                 txtPassConfirm.Text = "";
-
             }
-
-
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
+        }
 
+        private void txtPassword_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void txtPassConfirm_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPassConfirm.Text))
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

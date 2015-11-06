@@ -1,4 +1,6 @@
-﻿namespace CIS.Presentation.UI.WindowsForms
+﻿using CIS.Application.Entities;
+
+namespace CIS.Presentation.UI.WindowsForms
 {
     partial class frmEditClinic
     {

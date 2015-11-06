@@ -1,9 +1,7 @@
 ﻿namespace CIS.Data.DataAccess
 {
-    using CIS.Application.Entities;
-    using System;
+    using Application.Entities;
     using System.Data.Entity;
-    using System.Linq;
 
     public class ClinicModel : DbContext
     {
@@ -16,6 +14,7 @@
         public ClinicModel()
             : base("name=ClinicModel")
         {
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ClinicModel>());
         }
 
         // Agregue un DbSet para cada tipo de entidad que desee incluir en el modelo. Para obtener más información 
@@ -23,5 +22,6 @@
 
         public virtual DbSet<Clinic> Clinicians { get; set; }
         public virtual DbSet<Patient> Patients { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

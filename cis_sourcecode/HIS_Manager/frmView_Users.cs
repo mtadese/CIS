@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using CIS.Data.DataAccess;
+using CIS.Application.Entities;
 
 namespace CIS.Presentation.UI.WindowsForms
 {
@@ -17,75 +18,48 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             InitializeComponent();
         }
-        //declaration of variables to be used within the program
-        public static TextBox tb;        
-        string connectionString;
-        SqlConnection con;
-        SqlDataAdapter adap;
-        DataSet ds1;
 
         private void frmViewUsers_Load(object sender, EventArgs e)
         {
-            tb  = txtpid2 ;
-
-            con = new SqlConnection(CIS.Presentation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
-            con.Open();
-
             Load_Users();
-            
         }
 
         private void Load_Users()
         {
-            try
+            using (ClinicModel context = new ClinicModel())
             {
-                //importing data from the MySql database into the users record form
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "Select Firstname, Lastname, Username, Password, Staff_ID from Logins";
-                adap = new SqlDataAdapter(cmd);
-                ds1 = new DataSet();
-                adap.Fill(ds1, "patients");
-                dataGridView1.DataSource = ds1.Tables[0];
-                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                var users = context.Users.ToList();
+                dataGridView1.DataSource = users;
             }
-            catch (System.Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
-            //change password of existing user
-            try
+            object algo = dataGridView1.SelectedRows[0].Cells[0].Value;
+            User user;
+
+            using (ClinicModel context = new ClinicModel())
             {
-                DataGridViewRow dr = dataGridView1.SelectedRows[0];
-                txtpid2.Text = dr.Cells[2].Value.ToString();
-                frmChangePass changePass = new frmChangePass();
-                changePass.ShowDialog();
+                user = context.Users
+                    .Where(x => x.Identifier.Equals(algo))
+                    .Single();
             }
-            catch (System.Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-             
+            
+            frmChangePass frm = new frmChangePass(user);
+            frm.ShowDialog();
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            //close this module
-            this.Close();
+            Close();
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            //add new user
             frmNew_User newUser = new frmNew_User();
             newUser.ShowDialog();
-            this.Refresh();
-
+            Refresh();
         }
-       
     }
 }

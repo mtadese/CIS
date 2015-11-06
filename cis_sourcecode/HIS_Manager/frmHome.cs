@@ -14,12 +14,9 @@ namespace CIS.Presentation.UI.WindowsForms
             InitializeComponent();
         }
 
-
-
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Close();
-
+            Close();
         }
 
         private void frmHome_Unload(object sender, EventArgs e)
@@ -91,6 +88,12 @@ namespace CIS.Presentation.UI.WindowsForms
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             login = new frmLogin();
+        }
+
+        private void searchToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmViewUsers frm = new frmViewUsers();
+            frm.ShowDialog();
         }
     }
 }

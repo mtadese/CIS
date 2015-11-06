@@ -186,7 +186,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New_User";
-            this.Load += new System.EventHandler(this.New_User_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

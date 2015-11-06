@@ -1,22 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Drawing.Imaging;
 using System.Data.SqlClient;
+using CIS.Application.Entities;
 
 namespace CIS.Presentation.UI.WindowsForms
 {
     public partial class frmEditClinic : Form
     {
+        private Clinic _clinic;
+
         public frmEditClinic()
         {
             InitializeComponent();
         }
+
+        public frmEditClinic(Clinic clinic) : this()
+        {
+            this._clinic = clinic;
+        }
+
         //declaration of variables to be used within the program
         string connectionString;
         SqlConnection con;
@@ -30,35 +33,23 @@ namespace CIS.Presentation.UI.WindowsForms
             con = new SqlConnection(CIS.Presentation.UI.WindowsForms.Properties.Settings.Default.LocalDB);
             con.Open();
 
-            Load_ClinicRecord();            
+            Load_ClinicRecord();
 
         }
 
         private void Load_ClinicRecord()
         {
-            string a = frmClinicsList.clID.Text;
-            //importing data from the MySql database into the clinician record form
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Select * from Clinicians where clnc_sys_id = '" + a + "' ";
-            dr = cmd.ExecuteReader();
-
-            if (dr.Read())
-            {
-                txtCSysID.Text = Convert.ToString(dr[0]);
-                txtCNum.Text = Convert.ToString(dr[1]);
-                cmbtitle.Text = Convert.ToString(dr[2]);                
-                txtLname.Text = Convert.ToString(dr[3]);
-                txtFname.Text = Convert.ToString(dr[4]);
-                txtSpecialty.Text = Convert.ToString(dr[5]);
-                txtDept.Text = Convert.ToString(dr[6]);
-                txtAddress.Text = Convert.ToString(dr[7]);
-                txtPhone.Text = Convert.ToString(dr[8]);
-                txtEmail.Text = Convert.ToString(dr[9]);
-
-                dr.Close();
-            }
-
-         }
+            txtCSysID.Text = _clinic.Identifier.ToString();
+            txtCNum.Text = _clinic.InternalCode;
+            cmbtitle.Text = _clinic.Title.ToString();
+            txtLname.Text = _clinic.LastName;
+            txtFname.Text = _clinic.FirstName;
+            txtSpecialty.Text = _clinic.Specialty;
+            txtDept.Text = _clinic.Department;
+            txtAddress.Text = _clinic.Address;
+            txtPhone.Text = _clinic.Telephone;
+            txtEmail.Text = _clinic.Email;
+        }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

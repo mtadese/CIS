@@ -1,89 +1,67 @@
-﻿//using CIS.Presentation.Logic.Presenter;
-//using CIS.Presentation.Models;
+﻿using CIS.Application.Entities;
+using CIS.Data.DataAccess;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CIS.Presentation.UI.WindowsForms
 {
-    public partial class frmNewClinic : Form // , INewClinicView
+    public partial class frmNewClinic : Form
     {
-        // private NewClinicPresenter _presenter;
-
-        SqlConnection con;
-        SqlCommand cmd;
-        SqlDataAdapter da;
-        DataSet ds;
 
         public frmNewClinic()
         {
             InitializeComponent();
-
-            // this._presenter = new NewClinicPresenter(this);
-        }
-
-        private void frmNewClinic_Load(object sender, EventArgs e)
-        {
-            con = new SqlConnection(Properties.Settings.Default.LocalDB);
-            con.Open();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtClinicNumber.Text == "") { MessageBox.Show("Mandatory Field is empty:Clinician Number"); }
-
-            else if (txtLastName.Text == "") { MessageBox.Show("Mandatory Field is empty:Lastname"); }
-            else
+            Clinic clinic = new Clinic()
             {
-                cmd = con.CreateCommand();
-                cmd.CommandText = "INSERT INTO Clinicians(clnc_id, title, lastname, firstname, specialty, department, address, phone, email, date_created)VALUES(@clinicID, @title, @lastname, @firstname, @specialty, @department, @address, @phone, @email, @dateCreated)";
-                cmd.Parameters.AddWithValue("@clinicID", txtClinicNumber.Text);
-                cmd.Parameters.AddWithValue("@title", cboTitle.Text);
-                cmd.Parameters.AddWithValue("@lastname", txtLastName.Text);
-                cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text);
-                cmd.Parameters.AddWithValue("@specialty", txtSpecialty.Text);
-                cmd.Parameters.AddWithValue("@department", txtDepartment.Text);
-                cmd.Parameters.AddWithValue("@address", txtAddress.Text);
-                cmd.Parameters.AddWithValue("@phone", txtTelephone.Text);
-                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@dateCreated", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+                Identifier = int.Parse(txtClinicNumber.Text),
+                Title = int.Parse(cboTitle.Text),
+                LastName = txtLastName.Text,
+                FirstName = txtFirstName.Text,
+                Specialty = txtSpecialty.Text,
+                Department = txtDepartment.Text,
+                Address = txtAddress.Text,
+                Telephone = txtTelephone.Text,
+                Email = txtEmail.Text,
+                CreatedAt = DateTime.Now
+            };
 
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Clinic Saved");
-                this.Close();
+            using (ClinicModel context = new ClinicModel())
+            {
+                context.Clinicians.Add(clinic);
+
+                context.SaveChanges();
             }
+
+            MessageBox.Show("Clinic Saved");
+
+            Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        public void LoadTitles()
+        private void txtClinicNumber_Validating(object sender, CancelEventArgs e)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(txtClinicNumber.Text) || txtClinicNumber.Text.Any(c => !char.IsNumber(c)))
+            {
+                e.Cancel = true;
+            }
         }
 
-        //public NewClinicPresentationModel Save()
-        //{
-        //    return new NewClinicPresentationModel() 
-        //    {
-        //        Address = this.txtAddress.Text,
-        //        Department = this.txtDepartment.Text,
-        //        Email = this.txtEmail.Text,
-        //        FirstName = this.txtFirstName.Text,
-        //        InternalCode = this.txtClinicNumber.Text,
-        //        LastName = this.txtLastName.Text,
-        //        Specialty = this.txtSpecialty.Text,
-        //        Telephone = this.txtTelephone.Text,
-        //        Title = this.cboTitle.SelectedIndex
-        //    };
-        //}
+        private void txtLastName_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtLastName.Text) || txtLastName.Text.Any(c => !char.IsLetter(c)))
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

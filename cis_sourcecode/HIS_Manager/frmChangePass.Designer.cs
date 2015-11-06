@@ -1,4 +1,6 @@
-﻿namespace CIS.Presentation.UI.WindowsForms
+﻿using CIS.Application.Entities;
+
+namespace CIS.Presentation.UI.WindowsForms
 {
     partial class frmChangePass
     {
@@ -48,11 +50,11 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Location = new System.Drawing.Point(99, 27);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(185, 20);
             this.txtPassword.TabIndex = 14;
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // label1
             // 
@@ -65,11 +67,11 @@
             // 
             // txtPassConfirm
             // 
-            this.txtPassConfirm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassConfirm.Location = new System.Drawing.Point(99, 55);
             this.txtPassConfirm.Name = "txtPassConfirm";
             this.txtPassConfirm.Size = new System.Drawing.Size(185, 20);
             this.txtPassConfirm.TabIndex = 16;
+            this.txtPassConfirm.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassConfirm_Validating);
             // 
             // btnCancel
             // 
@@ -95,7 +97,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
             this.ClientSize = new System.Drawing.Size(297, 125);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -107,7 +108,6 @@
             this.Name = "frmChangePass";
             this.ShowInTaskbar = false;
             this.Text = "frmChangePass";
-            this.Load += new System.EventHandler(this.frmChangePass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

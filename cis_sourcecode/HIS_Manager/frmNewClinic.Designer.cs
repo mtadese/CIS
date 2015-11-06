@@ -65,6 +65,7 @@
             this.txtClinicNumber.Name = "txtClinicNumber";
             this.txtClinicNumber.Size = new System.Drawing.Size(144, 20);
             this.txtClinicNumber.TabIndex = 1;
+            this.txtClinicNumber.Validating += new System.ComponentModel.CancelEventHandler(this.txtClinicNumber_Validating);
             // 
             // cboTitle
             // 
@@ -95,6 +96,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(144, 20);
             this.txtLastName.TabIndex = 4;
+            this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.txtLastName_Validating);
             // 
             // lblLastName
             // 
@@ -248,7 +250,6 @@
             this.Controls.Add(this.txtClinicNumber);
             this.Name = "frmNewClinic";
             this.Text = "frmNewClinic";
-            this.Load += new System.EventHandler(this.frmNewClinic_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
