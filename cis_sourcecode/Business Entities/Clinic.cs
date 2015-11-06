@@ -8,7 +8,7 @@ namespace CIS.Application.Entities
         [Key]
         public int Identifier { get; set; }
         public string InternalCode { get; set; }
-        public int Title { get; set; }
+        public Title Title { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Specialty { get; set; }

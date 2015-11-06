@@ -23,5 +23,6 @@
         public virtual DbSet<Clinic> Clinicians { get; set; }
         public virtual DbSet<Patient> Patients { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Appointment> Appointments { get; set; }
     }
 }

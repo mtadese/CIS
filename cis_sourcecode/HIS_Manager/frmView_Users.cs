@@ -35,16 +35,16 @@ namespace CIS.Presentation.UI.WindowsForms
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
-            object algo = dataGridView1.SelectedRows[0].Cells[0].Value;
+            int id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
             User user;
 
             using (ClinicModel context = new ClinicModel())
             {
                 user = context.Users
-                    .Where(x => x.Identifier.Equals(algo))
+                    .Where(x => x.Identifier.Equals(id))
                     .Single();
             }
-            
+
             frmChangePass frm = new frmChangePass(user);
             frm.ShowDialog();
 

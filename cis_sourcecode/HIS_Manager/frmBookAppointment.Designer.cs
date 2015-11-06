@@ -35,7 +35,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnSearchClinic = new System.Windows.Forms.Button();
             this.txtPatConsultant = new System.Windows.Forms.TextBox();
@@ -43,8 +42,6 @@
             this.txtPatname = new System.Windows.Forms.TextBox();
             this.txtHospNum = new System.Windows.Forms.TextBox();
             this.txtPid = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtApptDate = new System.Windows.Forms.TextBox();
             this.txtApptPurpose = new System.Windows.Forms.TextBox();
             this.grpClinics = new System.Windows.Forms.GroupBox();
             this.label37 = new System.Windows.Forms.Label();
@@ -54,7 +51,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtDateReg = new System.Windows.Forms.TextBox();
-            this.cmbApptTime = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.grpClinics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridClinics)).BeginInit();
             this.SuspendLayout();
@@ -113,15 +111,6 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Appointment Date";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 173);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Appointment Time";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -139,7 +128,6 @@
             this.btnSearchClinic.TabIndex = 88;
             this.btnSearchClinic.Text = "Search";
             this.btnSearchClinic.UseVisualStyleBackColor = true;
-            this.btnSearchClinic.Click += new System.EventHandler(this.btnSearchClinic_Click);
             // 
             // txtPatConsultant
             // 
@@ -181,21 +169,6 @@
             this.txtPid.TabIndex = 90;
             this.txtPid.Leave += new System.EventHandler(this.txtPid_Leave);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(324, 144);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(20, 20);
-            this.dateTimePicker1.TabIndex = 94;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // txtApptDate
-            // 
-            this.txtApptDate.Location = new System.Drawing.Point(124, 144);
-            this.txtApptDate.Name = "txtApptDate";
-            this.txtApptDate.Size = new System.Drawing.Size(194, 20);
-            this.txtApptDate.TabIndex = 93;
-            // 
             // txtApptPurpose
             // 
             this.txtApptPurpose.Location = new System.Drawing.Point(124, 197);
@@ -211,13 +184,11 @@
             this.grpClinics.Controls.Add(this.button1);
             this.grpClinics.Controls.Add(this.btnLoadClinic);
             this.grpClinics.Controls.Add(this.dgridClinics);
-            this.grpClinics.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.grpClinics.Location = new System.Drawing.Point(362, 53);
+            this.grpClinics.Location = new System.Drawing.Point(350, 12);
             this.grpClinics.Name = "grpClinics";
             this.grpClinics.Size = new System.Drawing.Size(237, 270);
             this.grpClinics.TabIndex = 98;
             this.grpClinics.TabStop = false;
-            this.grpClinics.Visible = false;
             // 
             // label37
             // 
@@ -238,7 +209,6 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnLoadClinic
             // 
@@ -256,11 +226,13 @@
             this.dgridClinics.AllowUserToDeleteRows = false;
             this.dgridClinics.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgridClinics.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.dgridClinics.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgridClinics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgridClinics.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgridClinics.Location = new System.Drawing.Point(6, 31);
+            this.dgridClinics.MultiSelect = false;
             this.dgridClinics.Name = "dgridClinics";
             this.dgridClinics.ReadOnly = true;
+            this.dgridClinics.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgridClinics.Size = new System.Drawing.Size(164, 233);
             this.dgridClinics.TabIndex = 17;
             this.dgridClinics.DoubleClick += new System.EventHandler(this.dgridClinics_DoubleClick_1);
@@ -288,59 +260,39 @@
             // txtDateReg
             // 
             this.txtDateReg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDateReg.Location = new System.Drawing.Point(362, 359);
+            this.txtDateReg.Location = new System.Drawing.Point(350, 318);
             this.txtDateReg.Name = "txtDateReg";
             this.txtDateReg.Size = new System.Drawing.Size(185, 20);
             this.txtDateReg.TabIndex = 101;
             this.txtDateReg.Visible = false;
             // 
-            // cmbApptTime
+            // label7
             // 
-            this.cmbApptTime.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbApptTime.FormattingEnabled = true;
-            this.cmbApptTime.Items.AddRange(new object[] {
-            "08:00:00",
-            "08:30:00",
-            "09:00:00",
-            "09:30:00",
-            "10:00:00",
-            "10:30:00",
-            "11:00:00",
-            "11:30:00",
-            "12:00:00",
-            "12:30:00",
-            "13:00:00",
-            "13:30:00",
-            "14:00:00",
-            "14:30:00",
-            "15:00:00",
-            "15:30:00",
-            "16:00:00",
-            "16:30:00",
-            "17:00:00",
-            "17:30:00",
-            "18:00:00",
-            "18:30:00",
-            "19:00:00"});
-            this.cmbApptTime.Location = new System.Drawing.Point(124, 170);
-            this.cmbApptTime.Name = "cmbApptTime";
-            this.cmbApptTime.Size = new System.Drawing.Size(220, 21);
-            this.cmbApptTime.TabIndex = 102;
-            this.cmbApptTime.Text = "00:00:00";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 173);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Appointment Time";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(124, 144);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(220, 20);
+            this.dateTimePicker1.TabIndex = 94;
             // 
             // frmBookAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 293);
-            this.Controls.Add(this.cmbApptTime);
+            this.ClientSize = new System.Drawing.Size(597, 350);
             this.Controls.Add(this.txtDateReg);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grpClinics);
             this.Controls.Add(this.txtApptPurpose);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.txtApptDate);
             this.Controls.Add(this.txtPatname);
             this.Controls.Add(this.txtHospNum);
             this.Controls.Add(this.txtPid);
@@ -376,7 +328,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSearchClinic;
         private System.Windows.Forms.TextBox txtPatConsultant;
@@ -384,8 +335,6 @@
         private System.Windows.Forms.TextBox txtPatname;
         private System.Windows.Forms.TextBox txtHospNum;
         private System.Windows.Forms.TextBox txtPid;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtApptDate;
         private System.Windows.Forms.TextBox txtApptPurpose;
         private System.Windows.Forms.GroupBox grpClinics;
         private System.Windows.Forms.Label label37;
@@ -395,6 +344,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtDateReg;
-        private System.Windows.Forms.ComboBox cmbApptTime;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

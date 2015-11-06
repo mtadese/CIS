@@ -9,7 +9,6 @@ namespace CIS.Presentation.UI.WindowsForms
 {
     public partial class frmNewClinic : Form
     {
-
         public frmNewClinic()
         {
             InitializeComponent();
@@ -20,7 +19,7 @@ namespace CIS.Presentation.UI.WindowsForms
             Clinic clinic = new Clinic()
             {
                 Identifier = int.Parse(txtClinicNumber.Text),
-                Title = int.Parse(cboTitle.Text),
+                Title = (Title)Enum.Parse(typeof(Title), cboTitle.Text),
                 LastName = txtLastName.Text,
                 FirstName = txtFirstName.Text,
                 Specialty = txtSpecialty.Text,
