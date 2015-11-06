@@ -21,40 +21,26 @@ namespace CIS.Presentation.UI.WindowsForms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            var ap = new Appointment()
             {
-                txtDateReg.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
-                //conditions for populating mandatory fields before saving into database
-                if (txtPatConsultant.Text == "") { MessageBox.Show("Mandatory Field is empty: Consultant"); }
-                else if (txtCNum.Text == "") { MessageBox.Show("Mandatory Field is empty: Consultant Number"); }
-                else if (txtPatname.Text == "") { MessageBox.Show("Mandatory Field is empty: Patient Name"); }
+                Identifier = int.Parse(txtCNum.Text),
+                ClinicianName = txtPatConsultant.Text,
+                PatientId = int.Parse(txtPid.Text),
+                HospitalNumber = int.Parse(txtHospNum.Text),
+                PatientName = txtPatname.Text,
+                Created = dateTimePicker1.Value,
+                Purpose = txtApptPurpose.Text,
+                CreatedAt = DateTime.Now
+            };
 
-                var ap = new Appointment()
-                {
-                    Identifier = int.Parse(txtCNum.Text),
-                    ClinicianName = txtPatConsultant.Text,
-                    PatientId = int.Parse(txtPid.Text),
-                    HospitalNumber = int.Parse(txtHospNum.Text),
-                    PatientName = txtPatname.Text,
-                    Created = dateTimePicker1.Value,
-                    Purpose = txtApptPurpose.Text,
-                    CreatedAt = DateTime.Parse(txtDateReg.Text)
-                };
-
-                using (ClinicModel context = new ClinicModel())
-                {
-                    context.Appointments.Add(ap);
-
-                    context.SaveChanges();
-                }
-
-                MessageBox.Show("Clinic Saved");
-            }
-            catch (Exception ex)
+            using (ClinicModel context = new ClinicModel())
             {
-                MessageBox.Show(ex.Message, "Book Appointment");
+                context.Appointments.Add(ap);
+
+                context.SaveChanges();
             }
 
+            MessageBox.Show("Clinic Saved");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -103,6 +89,30 @@ namespace CIS.Presentation.UI.WindowsForms
 
             txtHospNum.Text = patient.HospitalNumber.ToString();
             txtPatname.Text = patient.FirstName + " " + patient.LastName;
+        }
+
+        private void txtPatConsultant_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPatConsultant.Text))
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void txtCNum_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (txtCNum.Text.Any(c => !char.IsNumber(c)))
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void txtPatname_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPatname.Text))
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

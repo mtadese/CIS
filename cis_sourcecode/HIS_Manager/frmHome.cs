@@ -5,10 +5,6 @@ namespace CIS.Presentation.UI.WindowsForms
 {
     public partial class frmHome : Form
     {
-        //public declaration of Login Form and Patient-Registration Form
-        frmLogin login;
-        frmNewPatient register;
-
         public frmHome()
         {
             InitializeComponent();
@@ -17,13 +13,6 @@ namespace CIS.Presentation.UI.WindowsForms
         private void button4_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void frmHome_Unload(object sender, EventArgs e)
-        {
-            //exiting the homescreen an loading the login page
-            login.Visible = true;
-            login.Show();
         }
 
         private void btnViewUsers_Click(object sender, EventArgs e)
@@ -40,13 +29,6 @@ namespace CIS.Presentation.UI.WindowsForms
             frmFullPatientList full = new frmFullPatientList();
             full.ShowDialog();
 
-        }
-
-        private void frmHome_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Closing the homescreen page
-            login.Visible = true;
-            login.Show();
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,15 +67,15 @@ namespace CIS.Presentation.UI.WindowsForms
             About.ShowDialog();
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            login = new frmLogin();
-        }
-
         private void searchToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             frmViewUsers frm = new frmViewUsers();
             frm.ShowDialog();
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

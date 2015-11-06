@@ -50,8 +50,6 @@
             this.dgridClinics = new System.Windows.Forms.DataGridView();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.txtDateReg = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.grpClinics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgridClinics)).BeginInit();
@@ -135,6 +133,7 @@
             this.txtPatConsultant.Name = "txtPatConsultant";
             this.txtPatConsultant.Size = new System.Drawing.Size(165, 20);
             this.txtPatConsultant.TabIndex = 87;
+            this.txtPatConsultant.Validating += new System.ComponentModel.CancelEventHandler(this.txtPatConsultant_Validating);
             // 
             // txtCNum
             // 
@@ -142,6 +141,7 @@
             this.txtCNum.Name = "txtCNum";
             this.txtCNum.Size = new System.Drawing.Size(165, 20);
             this.txtCNum.TabIndex = 89;
+            this.txtCNum.Validating += new System.ComponentModel.CancelEventHandler(this.txtCNum_Validating);
             // 
             // txtPatname
             // 
@@ -150,6 +150,7 @@
             this.txtPatname.Name = "txtPatname";
             this.txtPatname.Size = new System.Drawing.Size(220, 20);
             this.txtPatname.TabIndex = 92;
+            this.txtPatname.Validating += new System.ComponentModel.CancelEventHandler(this.txtPatname_Validating);
             // 
             // txtHospNum
             // 
@@ -257,24 +258,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtDateReg
-            // 
-            this.txtDateReg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDateReg.Location = new System.Drawing.Point(350, 318);
-            this.txtDateReg.Name = "txtDateReg";
-            this.txtDateReg.Size = new System.Drawing.Size(185, 20);
-            this.txtDateReg.TabIndex = 101;
-            this.txtDateReg.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 173);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Appointment Time";
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(124, 144);
@@ -286,8 +269,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 350);
-            this.Controls.Add(this.txtDateReg);
+            this.ClientSize = new System.Drawing.Size(597, 288);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grpClinics);
@@ -300,7 +282,6 @@
             this.Controls.Add(this.btnSearchClinic);
             this.Controls.Add(this.txtPatConsultant);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -343,8 +324,6 @@
         private System.Windows.Forms.DataGridView dgridClinics;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox txtDateReg;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

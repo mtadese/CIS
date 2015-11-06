@@ -14,7 +14,7 @@
         public ClinicModel()
             : base("name=ClinicModel")
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ClinicModel>());
+            Database.SetInitializer(new ClinicInitializer());
         }
 
         // Agregue un DbSet para cada tipo de entidad que desee incluir en el modelo. Para obtener más información 

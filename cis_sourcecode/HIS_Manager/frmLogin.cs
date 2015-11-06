@@ -1,5 +1,8 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using CIS.Application.Entities;
+using CIS.Data.DataAccess;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CIS.Presentation.UI.WindowsForms
@@ -10,58 +13,44 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             InitializeComponent();
         }
-        //declaration of variables to be used within the program
-        string connectionString;
-        SqlConnection con;
-        SqlCommand cmd;
-        SqlDataReader dr;
-
-        frmHome homepage;
-        
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            con = new SqlConnection(Properties.Settings.Default.LocalDB);
-            con.Open();
-
-            homepage = new frmHome();
-    
-        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //checking the inputed username and password with the database users' record
-            cmd = con.CreateCommand();
-            cmd.CommandText = "Select * from Logins where username = '"+ txtUsername.Text +"' and password= '" + txtPassword.Text + "' ";
-            dr = cmd.ExecuteReader();
+            List<User> users = new List<User>();
 
-            if (dr.HasRows)
+            using (ClinicModel context = new ClinicModel())
             {
-                //MessageBox.Show("Login Granted");
-                homepage.Show();
-                this.Visible = false ;
+                users = context.Users
+                    .Where(x => x.Username == txtUsername.Text)
+                    .ToList();
+            }
 
-                con.Close();
+            if (users.Count == 0)
+            {
+                DialogResult = DialogResult.No;
+                Close();
             }
             else
             {
-                MessageBox.Show("Invalid Login Details! Try Again");
-                txtUsername.Clear();
-                txtPassword.Clear();
-                con.Close();
-                con.Open();
+                User user = users.Single(); 
 
+                if (user.Password.Equals(txtPassword.Text))
+                {
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+                else
+                {
+                    DialogResult = DialogResult.No;
+                    Close();
+                }
             }
-
-        }
-
-        public void dBase_Connection()
-        {
-            connectionString = "Server=127.0.0.1;Database=his_record;Uid=micheal;Pwd=password;";            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            DialogResult = DialogResult.Abort;
+            Close();
         }
     }
 }

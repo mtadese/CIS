@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace CIS.Presentation.UI.WindowsForms
 {
@@ -12,7 +13,13 @@ namespace CIS.Presentation.UI.WindowsForms
         {
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            System.Windows.Forms.Application.Run(new frmHome());
+
+            frmLogin login = new frmLogin();
+            System.Windows.Forms.Application.Run(login);
+            if (login.DialogResult == DialogResult.OK)
+            {
+                System.Windows.Forms.Application.Run(new frmHome());
+            }
         }
     }
 }
